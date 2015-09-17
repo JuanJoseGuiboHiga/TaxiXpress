@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'contacto/index'
+
+  get 'testimonios/index'
+
+  get 'sobre/index'
+
+  get 'servicio/index'
+
   resources :users
   #get 'home/index'
   root 'home#index'
