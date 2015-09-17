@@ -40,15 +40,21 @@
   </head>
   <body>
 
+
  <div class="brand">
   <%= image_tag("logo.png") %>
-   TaxiXpress
+  <%= link_to "TaxiXpress", root_path  %>
+  <div class='registrese'>
+    <%= image_tag("registrologo.png") %>
+ <%= link_to "Registrarme", new_user_path  %>
+ </div>
    <div class="tabsalineados">
     <%= tabs %>   </div>
    </div>
 
-   
 
+   
+<div class="fondo">
     <div class="container">
       <div class="row">
         <div class="col-lg-9">
@@ -60,12 +66,12 @@
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
+   </div>
 
-   
    
 
       <footer>
-        <p>&copy; Company 2015</p>
+        <p>&copy; Todos los Derechos Reservados a TaxiXpress</p>
       </footer>
 
     </div> <!-- /container -->

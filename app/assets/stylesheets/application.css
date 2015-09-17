@@ -1,8 +1,20 @@
-/*!
- * Start Bootstrap - Business Casual Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
  */
+
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -10,19 +22,39 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    
    
    
 }
 .container{
-     background-image:url("./Fondo.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-       text-align: center;
+
      
+     text-align:center;
+    
+       
+}
+.fondo{
+     background-repeat: no-repeat;
+      background-size: cover;
+    /*background-image:url('./Fondo.png');*/
 }
 .tabsalineados{
      display: table;
     margin: 0 auto;
+}
+
+.registrese{
+  text-align: right;
+   font-weight:100;
+   font-size:20%;
+   padding-right:50px;
+ 
+}
+
+
+
+a:visited {
+    color: #FE9A2E;
 }
 h1,
 h2,
@@ -40,6 +72,9 @@ p {
     font-size: 1.25em;
     line-height: 1.6;
     color: #000;
+      display: table;
+    margin: 0 auto;
+   
 }
 
 hr {
@@ -120,11 +155,12 @@ hr {
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
+    
 }
 
 footer p {
-    margin: 0;
     padding: 50px 0;
+    text-align:center;
 }
 
 @media screen and (min-width:768px) {
@@ -204,5 +240,9 @@ footer p {
         content: '';
         display: table;
         clear: both;
+    
+    }
+    .col-lg-9 {
+     width: 100%; 
     }
 }
