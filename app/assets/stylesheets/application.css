@@ -27,16 +27,18 @@ body {
    
 }
 .container{
-
-     
      text-align:center;
     
        
 }
 .fondo{
+    width:100%;
+    height:70%;
      background-repeat: no-repeat;
       background-size: cover;
-    /*background-image:url('./Fondo.png');*/
+      background-image:url('./Fondo.png');
+     padding-bottom:300px;
+ 
 }
 .tabsalineados{
      display: table;
@@ -51,10 +53,35 @@ body {
  
 }
 
+.listaiconos{
 
+   text-align:right;
+   height:100px;
+    width:auto;
+    margin-right:20px;
+
+}
+.listaiconos img{
+   height:30%;
+    width:auto;
+}
+
+
+.footerInicial{
+    height:50px;
+    width:auto    ;
+    background-color:#FACC2E;
+    padding-top:50px;
+}
 
 a:visited {
     color: #FE9A2E;
+    background-color:transparent;
+}
+
+a:hover {
+    background-color: transparent;
+    
 }
 h1,
 h2,
@@ -155,12 +182,14 @@ hr {
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
+    background-color:#000000;
     
 }
 
 footer p {
-    padding: 50px 0;
+    padding: 10px 0;
     text-align:center;
+    color:#FFFFFF;
 }
 
 @media screen and (min-width:768px) {

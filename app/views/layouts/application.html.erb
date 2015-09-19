@@ -48,6 +48,7 @@
     <%= image_tag("registrologo.png") %>
  <%= link_to "Registrarme", new_user_path  %>
  </div>
+ 
    <div class="tabsalineados">
     <%= tabs %>   </div>
    </div>
@@ -71,7 +72,14 @@
    
 
       <footer>
+        <div class='footerInicial'></div>
         <p>&copy; Todos los Derechos Reservados a TaxiXpress</p>
+        <div class="listaiconos">
+        <%= link_to image_tag("icono-face-08.png"), "http://www.facebook.com" %>
+        <%= link_to image_tag("icono-twitter.png"), "https://twitter.com/?lang=es" %>
+        <%= link_to image_tag("icono-g.png"), "https://plus.google.com/" %>
+        <%= link_to image_tag("icono-youtube.png"), "https://www.youtube.com/" %>
+        </div>
       </footer>
 
     </div> <!-- /container -->
