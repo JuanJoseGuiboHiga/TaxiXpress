@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'precio/index'
+
+  get 'ranking_taxista/index'
+
+  get 'seleccionar_taxista/index'
+
+  get 'paginaprincipal_usuario/index'
+
   get 'contacto/index'
 
   get 'testimonios/index'

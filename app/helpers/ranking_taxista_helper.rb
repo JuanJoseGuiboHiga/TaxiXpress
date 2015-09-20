@@ -1,0 +1,2 @@
+module RankingTaxistaHelper
+end

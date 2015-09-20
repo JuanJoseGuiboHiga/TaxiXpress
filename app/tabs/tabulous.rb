@@ -4,7 +4,7 @@ Tabulous.setup do
 
       home_tab do
       text          { 'INICIO' }
-      link_path     { root_path }
+      link_path     { paginaprincipal_usuario_index_path }
       visible_when  { true }
       enabled_when  { true }
       active_when   { in_action('any').of_controller('home') }
@@ -40,10 +40,11 @@ Tabulous.setup do
       visible_when  { true }
       enabled_when  { true }
       active_when   { in_action('any').of_controller('contacto') }
+
     end
 
    
-
+   
   end
 
   customize do
@@ -67,6 +68,7 @@ Tabulous.setup do
     # whether to always add the HTML markup for subtabs, even if empty
     # defaults to false
     # render_subtabs_when_empty false
+      when_action_has_no_tab :render
 
   end
 
