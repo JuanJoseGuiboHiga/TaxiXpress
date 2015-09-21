@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
 
-<<<<<<< HEAD
-=======
   get 'servicio_precio_usaurio/index'
 
   get 'consultar_servicio_usuario/index'
@@ -13,7 +11,6 @@ Rails.application.routes.draw do
 
   get 'notificacion_contacto_usuario/index'
 
->>>>>>> 36a8d5f5f43e0ba01c1938f9d9da55a25b1104b7
   get 'testimonio_taxista/index'
 
   get 'sobretaxi_2_taxista/index'
@@ -23,15 +20,10 @@ Rails.application.routes.draw do
   get 'servicios_2_taxista/index'
 
   get 'servicios_1_taxista/index'
-<<<<<<< HEAD
-
-  get 'servicio_usuario2/index'
-=======
 
   get 'servicio_usuario2/index'
 
-
->>>>>>> 36a8d5f5f43e0ba01c1938f9d9da55a25b1104b7
+  get 'servicio_usuario2/index'
 
   devise_for :client
 
