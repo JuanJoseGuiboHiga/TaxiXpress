@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
+  get 'testimonio_taxista/index'
+
+  get 'sobretaxi_2_taxista/index'
+
+  get 'sobretaxi_1_taxista/index'
+
+  get 'servicios_2_taxista/index'
+
+  get 'servicios_1_taxista/index'
+=======
   get 'servicio_usuario2/index'
 
+>>>>>>> b799fac8b12c087aa6b65a5e2b07a2b163f2ed16
 
   devise_for :client
 
@@ -19,20 +31,9 @@ Rails.application.routes.draw do
 
   get 'contacto_taxista/index'
 
-  get 'testimonio__taxista/index'
-
-  get 'sobretaxi_2__taxista/index'
-
-  get 'sobretaxi_1__taxista/index'
-
-  get 'servicios_2__taxista/index'
-
-  get 'servicios_1__taxista/index'
-
   get 'pagina_principal_taxista/index'
 
   get 'login_taxista/index'
-
 
   get 'notificacion_registro/index'
 
