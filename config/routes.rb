@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'reportes_servicios_taxista/index'
 
   get 'taxis_asignados_taxista/index'
@@ -28,6 +29,8 @@ Rails.application.routes.draw do
   get 'login_taxista/index'
 
   devise_for :client
+=======
+>>>>>>> e0e668a5e3e3a3c03a923ab427f9f95e990b6806
 
   get 'notificacion_registro/index'
 
@@ -38,6 +41,7 @@ Rails.application.routes.draw do
   get 'seleccionar_taxista/index'
 
   get 'paginaprincipal_usuario/index'
+
 
   get 'contacto/index'
 

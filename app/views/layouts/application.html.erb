@@ -46,18 +46,7 @@
   <%= link_to "TaxiXpress", root_path  %>
   <div class='registrese'>
     <%= image_tag("logoregistro.png") %>
-<% if client_signed_in? %>
-          <li class="col-md">
-            <%= link_to "Cerrar Sesion", destroy_client_session_path, method: :delete %>          
-          </li>
-          <%else%>
-          <li class="col-md">
-            <%= link_to "Iniciar sesion", new_client_session_path %>          
-          </li>
-          <li class="col-md">
-            <%= link_to "Registarse", new_client_registration_path %>          
-          </li>
-          <%end%>
+
  </div>
  
    <div class="tabsalineados">
