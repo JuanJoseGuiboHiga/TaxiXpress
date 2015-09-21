@@ -79,7 +79,6 @@ body {
       width:50%;
       background-color:#585858;
       margin: auto;
-      width: 60%;
      padding: 10px;
      margin-top:300px;
       opacity: 0.7;
@@ -88,7 +87,24 @@ body {
 }
 .contenedorPrincipal h1{
     color:orange;
+  
 }
+.sobretaxiImg{
+    text-align:right;
+ 
+    
+}
+.rightside{
+    float: left;
+    margin-left: 108px;
+
+
+}
+.leftside{
+     display: inline-box;
+     height:200px;
+}
+
 a:visited {
     color: #FE9A2E;
     background-color:transparent;
@@ -113,7 +129,7 @@ h6 {
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #000;
+    color: #FFFFFF;
       display: table;
     margin: 0 auto;
    
