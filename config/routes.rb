@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'servicio_usuario2/index'
+
+
   devise_for :client
 
   get 'reportes_servicios_taxista/index'
