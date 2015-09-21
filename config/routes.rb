@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'homepage_admin/index'
+
   devise_for :client
 
   get 'reportes_servicios_taxista/index'
@@ -48,6 +50,8 @@ Rails.application.routes.draw do
   get 'sobre/index'
 
   get 'servicio/index'
+  
+  get 'homepage_admin/index'
 
   #resources :users
   #get 'home/index'
