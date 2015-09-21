@@ -129,6 +129,18 @@ a:visited {
     float: left;
     margin-left: 108px;
 }
+.contactoCampos {
+    float:left;
+    margin-left:50px;
+}
+.contactoCampos input{
+    margin-bottom:10px;
+    float:left;
+}
+.contactoInputs{
+     margin-bottom:10px;
+    float:left;
+}
 a:hover {
     background-color: transparent;
     
