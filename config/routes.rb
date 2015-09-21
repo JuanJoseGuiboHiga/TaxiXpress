@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'testimonio_taxista/index'
+
+  get 'sobretaxi_2_taxista/index'
+
+  get 'sobretaxi_1_taxista/index'
+
+  get 'servicios_2_taxista/index'
+
+  get 'servicios_1_taxista/index'
+
   devise_for :client
 
   get 'reportes_servicios_taxista/index'
@@ -16,20 +26,9 @@ Rails.application.routes.draw do
 
   get 'contacto_taxista/index'
 
-  get 'testimonio__taxista/index'
-
-  get 'sobretaxi_2__taxista/index'
-
-  get 'sobretaxi_1__taxista/index'
-
-  get 'servicios_2__taxista/index'
-
-  get 'servicios_1__taxista/index'
-
   get 'pagina_principal_taxista/index'
 
   get 'login_taxista/index'
-
 
   get 'notificacion_registro/index'
 
