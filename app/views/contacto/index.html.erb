@@ -1,5 +1,16 @@
-<h1>Contacto#index</h1>
-<p>Find me in app/views/contacto/index.html.erb</p>
-<a></a>
-<a></a>
-<a></a>
+
+<div class='contenedorsobre'>
+<div class='contenedorPrincipal'>
+<h1>Contacto</h1>
+<div class='contactoCampos'>
+    <div class'contactoInputs'>
+<input type="text" name="txtNombre" placeholder="Nombre"><br>
+<input type="text" name="txtEmail" placeholder="Email"><br>
+</div>
+  <textarea rows="9" cols="50">
+¿Cual es su duda?
+</textarea>
+<%= button_to "Enviar",  notificacion_contacto_usuario_index_path, :class => "button", :method => :get  %>
+</div>
+</div>
+</div>

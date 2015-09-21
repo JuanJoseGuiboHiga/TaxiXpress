@@ -79,21 +79,68 @@ body {
       width:50%;
       background-color:#585858;
       margin: auto;
-      width: 60%;
      padding: 10px;
      margin-top:300px;
       opacity: 0.7;
       border-radius: 25px;
+      overflow:hidden
    
 }
 .contenedorPrincipal h1{
     color:orange;
+  
+}
+.sobretaxiImg{
+    text-align:right;
+ 
+    
+}
+.rightside{
+    float: left;
+    margin-left: 108px;
+
+
+}
+.leftside{
+     display: inline-box;
+     height:200px;
+}
+.enviarComentario{
+    float: left;
+    margin-left: 108px;
+}
+.comentarios{
+    float: left;
+    margin-left: 108px;
+}
+.comentarios img{
+   width:20%;
+   height:20%;
+   float:left;
+}
+.seccionComentarios p{
+   float:right;
 }
 a:visited {
     color: #FE9A2E;
     background-color:transparent;
 }
-
+.contenedorComentarios{
+    float: left;
+    margin-left: 108px;
+}
+.contactoCampos {
+    float:left;
+    margin-left:50px;
+}
+.contactoCampos input{
+    margin-bottom:10px;
+    float:left;
+}
+.contactoInputs{
+     margin-bottom:10px;
+    float:left;
+}
 a:hover {
     background-color: transparent;
     
@@ -113,7 +160,7 @@ h6 {
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #000;
+    color: #FFFFFF;
       display: table;
     margin: 0 auto;
    
