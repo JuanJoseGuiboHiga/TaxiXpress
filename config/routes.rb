@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   devise_for :clients
+=======
+  get 'notificacion_registro/index'
+
+  get 'precio/index'
+
+  get 'ranking_taxista/index'
+
+  get 'seleccionar_taxista/index'
+
+  get 'paginaprincipal_usuario/index'
+
+>>>>>>> FETCH_HEAD
   get 'contacto/index'
 
   get 'testimonios/index'
