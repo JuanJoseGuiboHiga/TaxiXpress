@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   devise_for :clients
-=======
   get 'notificacion_registro/index'
 
   get 'precio/index'
@@ -12,7 +10,6 @@ Rails.application.routes.draw do
 
   get 'paginaprincipal_usuario/index'
 
->>>>>>> FETCH_HEAD
   get 'contacto/index'
 
   get 'testimonios/index'
