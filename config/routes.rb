@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  devise_for :client
-=======
 
-  devise_for :clients
-
->>>>>>> 6b1a2ac818c3b56db23725122c46ef75f0be25cd
   get 'notificacion_registro/index'
 
   get 'precio/index'
@@ -16,10 +10,7 @@ Rails.application.routes.draw do
 
   get 'paginaprincipal_usuario/index'
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 6b1a2ac818c3b56db23725122c46ef75f0be25cd
   get 'contacto/index'
 
   get 'testimonios/index'
