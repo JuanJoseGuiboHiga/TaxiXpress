@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'reportes_servicios_taxista/index'
+
+  get 'taxis_asignados_taxista/index'
+
+  get 'notificacion_aceptar_taxista/index'
+
+  get 'notificacion_descarga_taxista/index'
+
+  get 'solicitudes_taxista/index'
+
+  get 'promedio_valoracion_taxista/index'
+
+  get 'contacto_taxista/index'
+
+  get 'testimonio__taxista/index'
+
+  get 'sobretaxi_2__taxista/index'
+
+  get 'sobretaxi_1__taxista/index'
+
+  get 'servicios_2__taxista/index'
+
+  get 'servicios_1__taxista/index'
+
+  get 'pagina_principal_taxista/index'
+
+  get 'login_taxista/index'
+
   devise_for :client
 
   get 'notificacion_registro/index'
