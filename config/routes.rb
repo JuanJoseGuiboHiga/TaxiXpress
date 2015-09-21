@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'servicio_precio_usaurio/index'
+
   get 'consultar_servicio_usuario/index'
 
   get 'reporte_taxis_usuario/index'
