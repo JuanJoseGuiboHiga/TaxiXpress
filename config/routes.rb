@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notificacion_registro/index'
+
   get 'precio/index'
 
   get 'ranking_taxista/index'
