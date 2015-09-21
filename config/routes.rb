@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  get 'consultar_servicio_usuario/index'
+
+  get 'reporte_taxis_usuario/index'
+
+  get 'servicio_ruta_usuario/index'
+
   get 'notificacion_contacto_usuario/index'
 
   get 'testimonio_taxista/index'
