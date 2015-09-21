@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+=======
+  devise_for :client
+>>>>>>> 639f85187612ce8534fe9f7eb8d94e5339c1a2e1
 
   get 'notificacion_registro/index'
 
@@ -10,7 +14,10 @@ Rails.application.routes.draw do
 
   get 'paginaprincipal_usuario/index'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 639f85187612ce8534fe9f7eb8d94e5339c1a2e1
   get 'contacto/index'
 
   get 'testimonios/index'
