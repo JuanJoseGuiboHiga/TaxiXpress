@@ -98,13 +98,17 @@ body {
 }
 .rightside{
     float: left;
-    margin-left: 108px;
+   
 
 
 }
 .leftside{
      display: inline-box;
      height:200px;
+}
+.leftside p{
+     display: inline-box;
+     text-size:70%;
 }
 .enviarComentario{
     float: left;
