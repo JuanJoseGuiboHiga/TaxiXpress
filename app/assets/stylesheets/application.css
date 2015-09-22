@@ -88,6 +88,7 @@ body {
 }
 .contenedorPrincipal h1{
     color:orange;
+
   
 }
 .sobretaxiImg{
@@ -133,13 +134,21 @@ a:visited {
     float:left;
     margin-left:50px;
 }
-.contactoCampos input{
-    margin-bottom:10px;
-    float:left;
+.contactoCampos {
+    margin-bottom:20px;
+   text-align: left;
+    
 }
 .contactoInputs{
-     margin-bottom:10px;
+     margin-bottom:20px;
     float:left;
+}
+
+.myButton {
+    background-color:orange;
+    width:70%;
+    height:70%;
+    color:white;
 }
 a:hover {
     background-color: transparent;
