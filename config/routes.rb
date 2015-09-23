@@ -12,16 +12,6 @@ Rails.application.routes.draw do
 
   get 'notificacion_contacto_usuario/index'
 
-  get 'testimonio_taxista/index'
-
-  get 'sobretaxi_2_taxista/index'
-
-  get 'sobretaxi_1_taxista/index'
-
-  get 'servicios_2_taxista/index'
-
-  get 'servicios_1_taxista/index'
-
   get 'servicio_usuario2/index'
 
   get 'servicio_usuario2/index'
