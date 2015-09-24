@@ -154,6 +154,20 @@ a:visited {
     height:70%;
     color:white;
 }
+.inicioImg img{
+    height:20%;
+    width:20%;
+    display: block;
+   
+}
+
+.inicioImg {
+   width:100%;
+   margin-left:40%;
+}
+.usuarioMenu{
+    
+}
 a:hover {
     background-color: transparent;
     

@@ -4,42 +4,42 @@ Tabulous.setup do
 
       home_tab do
       text          { 'INICIO' }
-      link_path     { paginaprincipal_usuario_index_path }
+      link_path     { inicio_path }
       visible_when  { true }
       enabled_when  { true }
-      active_when   { in_action('any').of_controller('home') }
+      active_when   { in_action('index').of_controller('home') }
     end
     
       servicio_tab do
       text          { 'SERVICIO' }
-      link_path     { servicio_index_path }
+      link_path     { servicio_path }
       visible_when  { true }
       enabled_when  { true }
-      active_when   { in_action('any').of_controller('servicio') }
+      active_when   { in_action('servicio').of_controller('static') }
     end
     
      sobre_tab do
       text          { 'SOBRE TAXI XPRESS' }
-      link_path     { sobre_index_path }
+      link_path     { sobre_path }
       visible_when  { true }
       enabled_when  { true }
-      active_when   { in_action('any').of_controller('sobre') }
+      active_when   { in_action('sobre').of_controller('static') }
     end
     
      testimonios_tab do
       text          { 'TESTIMONIOS' }
-      link_path     { testimonios_index_path }
+      link_path     { testimonios_path }
       visible_when  { true }
       enabled_when  { true }
-      active_when   { in_action('any').of_controller('testimonios') }
+      active_when   { in_action('testimonios').of_controller('static') }
     end
     
     contacto_tab do
       text          { 'CONTACTO' }
-      link_path     { contacto_index_path }
+      link_path     { contacto_path }
       visible_when  { true }
       enabled_when  { true }
-      active_when   { in_action('any').of_controller('contacto') }
+      active_when   { in_action('contacto').of_controller('static') }
 
     end
 

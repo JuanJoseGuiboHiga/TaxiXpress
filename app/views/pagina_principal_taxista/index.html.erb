@@ -1,2 +1,11 @@
-<h1>PaginaPrincipalTaxista#index</h1>
-<p>Find me in app/views/pagina_principal_taxista/index.html.erb</p>
+
+<div class='contenedorsobre'>
+<div class='contenedorPrincipal'>
+<h1>Bienvenido a TaxiXpress</h1>
+<div class='botonesPaginaPrincipal'>
+<%= button_to "Valoracion",   promedio_valoracion_taxista_index_path, :class => "myButton", :method => :get  %>
+<%= button_to "Solicitudes",  solicitudes_taxista_index_path, :class => "myButton", :method => :get  %>
+<%= button_to "Reportes",  reportes_servicios_taxista_index_path, :class => "myButton", :method => :get  %>
+</div>
+</div>
+</div>

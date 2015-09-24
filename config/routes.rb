@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  
+  get 'pagina_principal_administrador/index'
 
-  get 'homepage_admin/index'
+  get 'inicio', controller: :static , action: :inicio , alias:'inicio'
+  get 'servicio', controller: :static , action: :servicio , alias:'servicio'
+  get 'sobre', controller: :static , action: :sobre , alias:'sobre'
+  get 'testimonios', controller: :static , action: :testimonios , alias:'testimonios'
+  get 'contacto', controller: :static , action: :contacto , alias:'contacto'
+
 
   get 'servicio_precio_usaurio/index'
 
@@ -12,9 +19,7 @@ Rails.application.routes.draw do
 
   get 'notificacion_contacto_usuario/index'
 
-  get 'servicio_usuario2/index'
 
-  get 'servicio_usuario2/index'
 
   devise_for :client
 
@@ -30,7 +35,6 @@ Rails.application.routes.draw do
 
   get 'promedio_valoracion_taxista/index'
 
-  get 'contacto_taxista/index'
 
   get 'pagina_principal_taxista/index'
 
@@ -46,14 +50,7 @@ Rails.application.routes.draw do
 
   get 'paginaprincipal_usuario/index'
 
-  get 'contacto/index'
 
-  get 'testimonios/index'
-
-  get 'sobre/index'
-
-  get 'servicio/index'
-  
   get 'homepage_admin/index'
 
   #resources :users
