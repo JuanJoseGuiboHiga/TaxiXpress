@@ -175,6 +175,10 @@ a:visited {
 .administradorMenu{
     
 }
+.authImg img{
+    height:50%;
+    width:20%;
+}
 a:hover {
     background-color: transparent;
     
