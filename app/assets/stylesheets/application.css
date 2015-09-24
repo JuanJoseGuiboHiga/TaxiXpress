@@ -163,9 +163,16 @@ a:visited {
 
 .inicioImg {
    width:100%;
-   margin-left:40%;
+   margin-left:20%;
 }
 .usuarioMenu{
+    display:inline-block;
+ 
+}
+.taxistaMenu{
+    
+}
+.administradorMenu{
     
 }
 a:hover {
