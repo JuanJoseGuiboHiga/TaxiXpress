@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  
+
+  devise_for :admins
+  resources :admins
+  devise_for :clients
+  resources :clients
+  devise_for :drivers
+  resources :drivers
   get 'pagina_principal_administrador/index'
 
   get 'inicio', controller: :static , action: :inicio , alias:'inicio'
@@ -19,9 +25,6 @@ Rails.application.routes.draw do
 
   get 'notificacion_contacto_usuario/index'
 
-
-
-  devise_for :client
 
   get 'reportes_servicios_taxista/index'
 
