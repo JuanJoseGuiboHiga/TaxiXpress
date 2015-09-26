@@ -1,0 +1,15 @@
+<%= simple_form_for(@driver) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name_driver %>
+    <%= f.input :address_driver %>
+    <%= f.input :telephone_driver %>
+    <%= f.input :status_driver %>
+    <%= f.input :placa_driver %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

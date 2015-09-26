@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :drivers
+  resources :drivers
+  devise_for :clients
+  resources :clients
   get 'pagina_principal_administrador/index'
 
   get 'inicio', controller: :static , action: :inicio , alias:'inicio'

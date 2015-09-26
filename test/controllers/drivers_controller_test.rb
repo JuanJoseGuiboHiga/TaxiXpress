@@ -18,7 +18,7 @@ class DriversControllerTest < ActionController::TestCase
 
   test "should create driver" do
     assert_difference('Driver.count') do
-      post :create, driver: { address: @driver.address, carroplaca: @driver.carroplaca, name: @driver.name, password: @driver.password, status: @driver.status, telephone: @driver.telephone }
+      post :create, driver: { address_driver: @driver.address_driver, name_driver: @driver.name_driver, placa_driver: @driver.placa_driver, status_driver: @driver.status_driver, telephone_driver: @driver.telephone_driver }
     end
 
     assert_redirected_to driver_path(assigns(:driver))
@@ -35,7 +35,7 @@ class DriversControllerTest < ActionController::TestCase
   end
 
   test "should update driver" do
-    patch :update, id: @driver, driver: { address: @driver.address, carroplaca: @driver.carroplaca, name: @driver.name, password: @driver.password, status: @driver.status, telephone: @driver.telephone }
+    patch :update, id: @driver, driver: { address_driver: @driver.address_driver, name_driver: @driver.name_driver, placa_driver: @driver.placa_driver, status_driver: @driver.status_driver, telephone_driver: @driver.telephone_driver }
     assert_redirected_to driver_path(assigns(:driver))
   end
 

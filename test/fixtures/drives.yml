@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_drive: MyString
+  address_drive: MyString
+  telephone_drive: MyString
+  status_drive: MyString
+  placa_drive: MyString
+
+two:
+  name_drive: MyString
+  address_drive: MyString
+  telephone_drive: MyString
+  status_drive: MyString
+  placa_drive: MyString

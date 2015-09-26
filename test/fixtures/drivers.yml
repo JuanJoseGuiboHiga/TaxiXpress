@@ -1,17 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  address: MyString
-  telephone: MyString
-  status: MyString
-  carroplaca: MyString
-  password: MyString
+  name_driver: MyString
+  address_driver: MyString
+  telephone_driver: MyString
+  status_driver: MyString
+  placa_driver: MyString
 
 two:
-  name: MyString
-  address: MyString
-  telephone: MyString
-  status: MyString
-  carroplaca: MyString
-  password: MyString
+  name_driver: MyString
+  address_driver: MyString
+  telephone_driver: MyString
+  status_driver: MyString
+  placa_driver: MyString
