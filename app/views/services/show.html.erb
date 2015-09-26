@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address origin:</strong>
+  <%= @service.address_origin %>
+</p>
+
+<p>
+  <strong>Address end:</strong>
+  <%= @service.address_end %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @service.price %>
+</p>
+
+<p>
+  <strong>Paymentype:</strong>
+  <%= @service.paymentype %>
+</p>
+
+<p>
+  <strong>Calification:</strong>
+  <%= @service.calification %>
+</p>
+
+<p>
+  <strong>Observation:</strong>
+  <%= @service.observation %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @service.client %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @service.driver %>
+</p>
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>
