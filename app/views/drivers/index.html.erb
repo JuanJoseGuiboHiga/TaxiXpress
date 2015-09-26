@@ -1,35 +1,62 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Drivers</h1>
-
-<table>
+<%- model_class = Driver -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name driver</th>
-      <th>Address driver</th>
-      <th>Telephone driver</th>
-      <th>Status driver</th>
-      <th>Placa driver</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name_driver) %></th>
+      <th><%= model_class.human_attribute_name(:address_driver) %></th>
+      <th><%= model_class.human_attribute_name(:telephone_driver) %></th>
+      <th><%= model_class.human_attribute_name(:status_driver) %></th>
+      <th><%= model_class.human_attribute_name(:placa_driver) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:encrypted_password) %></th>
+      <th><%= model_class.human_attribute_name(:reset_password_token) %></th>
+      <th><%= model_class.human_attribute_name(:reset_password_sent_at) %></th>
+      <th><%= model_class.human_attribute_name(:remember_created_at) %></th>
+      <th><%= model_class.human_attribute_name(:current_sign_in_at) %></th>
+      <th><%= model_class.human_attribute_name(:last_sign_in_at) %></th>
+      <th><%= model_class.human_attribute_name(:current_sign_in_ip) %></th>
+      <th><%= model_class.human_attribute_name(:last_sign_in_ip) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @drivers.each do |driver| %>
       <tr>
+        <td><%= link_to driver.id, driver_path(driver) %></td>
         <td><%= driver.name_driver %></td>
         <td><%= driver.address_driver %></td>
         <td><%= driver.telephone_driver %></td>
         <td><%= driver.status_driver %></td>
         <td><%= driver.placa_driver %></td>
-        <td><%= link_to 'Show', driver %></td>
-        <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
-        <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= driver.email %></td>
+        <td><%= driver.encrypted_password %></td>
+        <td><%= driver.reset_password_token %></td>
+        <td><%= driver.reset_password_sent_at %></td>
+        <td><%= driver.remember_created_at %></td>
+        <td><%= driver.current_sign_in_at %></td>
+        <td><%= driver.last_sign_in_at %></td>
+        <td><%= driver.current_sign_in_ip %></td>
+        <td><%= driver.last_sign_in_ip %></td>
+        <td><%=l driver.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_driver_path(driver), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      driver_path(driver),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Driver', new_driver_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_driver_path,
+            :class => 'btn btn-primary' %>

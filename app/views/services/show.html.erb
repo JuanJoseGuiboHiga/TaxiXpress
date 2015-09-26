@@ -21,11 +21,6 @@
 </p>
 
 <p>
-  <strong>Calification:</strong>
-  <%= @service.calification %>
-</p>
-
-<p>
   <strong>Observation:</strong>
   <%= @service.observation %>
 </p>
@@ -38,6 +33,11 @@
 <p>
   <strong>Driver:</strong>
   <%= @service.driver %>
+</p>
+
+<p>
+  <strong>Valuation:</strong>
+  <%= @service.valuation %>
 </p>
 
 <%= link_to 'Edit', edit_service_path(@service) %> |

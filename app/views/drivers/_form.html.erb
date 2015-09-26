@@ -1,15 +1,34 @@
-<%= simple_form_for(@driver) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @driver, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name_driver %>
+  <%= error_span(@driver[:name_driver]) %>
+  <%= f.input :address_driver %>
+  <%= error_span(@driver[:address_driver]) %>
+  <%= f.input :telephone_driver %>
+  <%= error_span(@driver[:telephone_driver]) %>
+  <%= f.input :status_driver %>
+  <%= error_span(@driver[:status_driver]) %>
+  <%= f.input :placa_driver %>
+  <%= error_span(@driver[:placa_driver]) %>
+  <%= f.input :email %>
+  <%= error_span(@driver[:email]) %>
+  <%= f.input :encrypted_password %>
+  <%= error_span(@driver[:encrypted_password]) %>
+  <%= f.input :reset_password_token %>
+  <%= error_span(@driver[:reset_password_token]) %>
+  <%= f.input :reset_password_sent_at %>
+  <%= error_span(@driver[:reset_password_sent_at]) %>
+  <%= f.input :remember_created_at %>
+  <%= error_span(@driver[:remember_created_at]) %>
+  <%= f.input :current_sign_in_at %>
+  <%= error_span(@driver[:current_sign_in_at]) %>
+  <%= f.input :last_sign_in_at %>
+  <%= error_span(@driver[:last_sign_in_at]) %>
+  <%= f.input :current_sign_in_ip %>
+  <%= error_span(@driver[:current_sign_in_ip]) %>
+  <%= f.input :last_sign_in_ip %>
+  <%= error_span(@driver[:last_sign_in_ip]) %>
 
-  <div class="form-inputs">
-    <%= f.input :name_driver %>
-    <%= f.input :address_driver %>
-    <%= f.input :telephone_driver %>
-    <%= f.input :status_driver %>
-    <%= f.input :placa_driver %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                drivers_path, :class => 'btn btn-default' %>
 <% end %>

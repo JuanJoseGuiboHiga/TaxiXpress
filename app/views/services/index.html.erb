@@ -9,10 +9,10 @@
       <th>Address end</th>
       <th>Price</th>
       <th>Paymentype</th>
-      <th>Calification</th>
       <th>Observation</th>
       <th>Client</th>
       <th>Driver</th>
+      <th>Valuation</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,10 +24,10 @@
         <td><%= service.address_end %></td>
         <td><%= service.price %></td>
         <td><%= service.paymentype %></td>
-        <td><%= service.calification %></td>
         <td><%= service.observation %></td>
         <td><%= service.client %></td>
         <td><%= service.driver %></td>
+        <td><%= service.valuation %></td>
         <td><%= link_to 'Show', service %></td>
         <td><%= link_to 'Edit', edit_service_path(service) %></td>
         <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>

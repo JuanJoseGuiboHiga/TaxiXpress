@@ -1,29 +1,45 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Driver -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name driver:</strong>
-  <%= @driver.name_driver %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name_driver) %>:</strong></dt>
+  <dd><%= @driver.name_driver %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address_driver) %>:</strong></dt>
+  <dd><%= @driver.address_driver %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telephone_driver) %>:</strong></dt>
+  <dd><%= @driver.telephone_driver %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status_driver) %>:</strong></dt>
+  <dd><%= @driver.status_driver %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:placa_driver) %>:</strong></dt>
+  <dd><%= @driver.placa_driver %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @driver.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:encrypted_password) %>:</strong></dt>
+  <dd><%= @driver.encrypted_password %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reset_password_token) %>:</strong></dt>
+  <dd><%= @driver.reset_password_token %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reset_password_sent_at) %>:</strong></dt>
+  <dd><%= @driver.reset_password_sent_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:remember_created_at) %>:</strong></dt>
+  <dd><%= @driver.remember_created_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:current_sign_in_at) %>:</strong></dt>
+  <dd><%= @driver.current_sign_in_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_sign_in_at) %>:</strong></dt>
+  <dd><%= @driver.last_sign_in_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:current_sign_in_ip) %>:</strong></dt>
+  <dd><%= @driver.current_sign_in_ip %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_sign_in_ip) %>:</strong></dt>
+  <dd><%= @driver.last_sign_in_ip %></dd>
+</dl>
 
-<p>
-  <strong>Address driver:</strong>
-  <%= @driver.address_driver %>
-</p>
-
-<p>
-  <strong>Telephone driver:</strong>
-  <%= @driver.telephone_driver %>
-</p>
-
-<p>
-  <strong>Status driver:</strong>
-  <%= @driver.status_driver %>
-</p>
-
-<p>
-  <strong>Placa driver:</strong>
-  <%= @driver.placa_driver %>
-</p>
-
-<%= link_to 'Edit', edit_driver_path(@driver) %> |
-<%= link_to 'Back', drivers_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              drivers_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_driver_path(@driver), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              driver_path(@driver),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

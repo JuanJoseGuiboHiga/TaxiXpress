@@ -25,10 +25,11 @@ class DriversController < ApplicationController
   # POST /drivers.json
   def create
     @driver = Driver.new(driver_params)
+    @driver.status_driver = 1
 
     respond_to do |format|
       if @driver.save
-        format.html { redirect_to @driver, notice: 'Driver was successfully created.' }
+        format.html { redirect_to @driver, notice: 'El taxista fue registrado.' }
         format.json { render :show, status: :created, location: @driver }
       else
         format.html { render :new }

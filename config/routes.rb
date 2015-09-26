@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :services
   resources :services
+  resources :valuations
+
   devise_for :drivers
   resources :drivers
   devise_for :clients
