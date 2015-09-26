@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
-  resources :admins
-
   get 'pagina_principal_administrador/index'
 
   get 'inicio', controller: :static , action: :inicio , alias:'inicio'
