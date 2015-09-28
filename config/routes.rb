@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :services
+  devise_for :users, ActiveAdmin::Devise.config
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :valuations
 
   devise_for :drivers
   resources :drivers
   devise_for :clients
-  resources :clients
+  resources :clients do 
+  resources :services 
+  end
   get 'pagina_principal_administrador/index'
 
   get 'inicio', controller: :static , action: :inicio , alias:'inicio'

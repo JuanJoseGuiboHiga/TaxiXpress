@@ -1,44 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Service -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Address origin:</strong>
-  <%= @service.address_origin %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:address_origin) %>:</strong></dt>
+  <dd><%= @service.address_origin %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address_end) %>:</strong></dt>
+  <dd><%= @service.address_end %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @service.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:paymentype) %>:</strong></dt>
+  <dd><%= @service.paymentype %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:observation) %>:</strong></dt>
+  <dd><%= @service.observation %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:client_id) %>:</strong></dt>
+  <dd><%= @service.client_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:driver_id) %>:</strong></dt>
+  <dd><%= @service.driver_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:valuation_id) %>:</strong></dt>
+  <dd><%= @service.valuation_id %></dd>
+</dl>
 
-<p>
-  <strong>Address end:</strong>
-  <%= @service.address_end %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @service.price %>
-</p>
-
-<p>
-  <strong>Paymentype:</strong>
-  <%= @service.paymentype %>
-</p>
-
-<p>
-  <strong>Observation:</strong>
-  <%= @service.observation %>
-</p>
-
-<p>
-  <strong>Client:</strong>
-  <%= @service.client %>
-</p>
-
-<p>
-  <strong>Driver:</strong>
-  <%= @service.driver %>
-</p>
-
-<p>
-  <strong>Valuation:</strong>
-  <%= @service.valuation %>
-</p>
-
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              services_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_service_path(@service), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              service_path(@service),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

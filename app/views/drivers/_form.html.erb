@@ -11,7 +11,6 @@
   <%= error_span(@driver[:placa_driver]) %>
   <%= f.input :email %>
   <%= error_span(@driver[:email]) %>
-  <%= f.input :encrypted_password %>
   <%= error_span(@driver[:encrypted_password]) %>
   <%= f.input :reset_password_token %>
   <%= error_span(@driver[:reset_password_token]) %>
@@ -27,6 +26,8 @@
   <%= error_span(@driver[:current_sign_in_ip]) %>
   <%= f.input :last_sign_in_ip %>
   <%= error_span(@driver[:last_sign_in_ip]) %>
+
+
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
