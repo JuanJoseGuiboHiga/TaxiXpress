@@ -75,4 +75,12 @@ class ServicesController < ApplicationController
     def service_params
       params.require(:service).permit(:address_origin, :address_end, :price, :paymentype, :observation, :client_id, :driver_id, :valuation_id)
     end
+    
+    def driver_name
+    self.driver.name_driver
+   end
+   
+    def client_name
+    self.client.no_client
+   end
 end
