@@ -7,11 +7,16 @@ Rails.application.routes.draw do
   resources :valuations
 
   devise_for :drivers
-  resources :drivers
+  
   devise_for :clients
   resources :clients do 
   resources :services 
   end
+  
+  resources :drivers do
+  resources :services 
+  end
+  
   get 'pagina_principal_administrador/index'
 
   get 'inicio', controller: :static , action: :inicio , alias:'inicio'

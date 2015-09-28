@@ -1,45 +1,41 @@
 <%- model_class = Service -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-    <h2><%="From Client #{@Client.no_client}"%></h2>
+    <h2><%="Del Cliente #{@Client.no_client}"%></h2>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:address_origin) %></th>
-      <th><%= model_class.human_attribute_name(:address_end) %></th>
-      <th><%= model_class.human_attribute_name(:price) %></th>
-      <th><%= model_class.human_attribute_name(:paymentype) %></th>
-      <th><%= model_class.human_attribute_name(:observation) %></th>
-      <th><%= model_class.human_attribute_name(:client_id) %></th>
-      <th><%= model_class.human_attribute_name(:driver_id) %></th>
-      <th><%= model_class.human_attribute_name(:valuation_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
+      <th><%= model_class.human_attribute_name("Direccion origen") %></th>
+      <th><%= model_class.human_attribute_name("Direccion Destino") %></th>
+      <th><%= model_class.human_attribute_name("Precio") %></th>
+      <th><%= model_class.human_attribute_name("Tipo de Pago") %></th>
+      <th><%= model_class.human_attribute_name("Observaciones") %></th>
+      <th><%= model_class.human_attribute_name("Cliente") %></th>
+      <th><%= model_class.human_attribute_name("Conductor") %></th>
+      <th><%= model_class.human_attribute_name("Evaluacion") %></th>
+      <th><%= model_class.human_attribute_name("Fecha del viaje") %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @services.each do |service| %>
       <tr>
-        <td><%= link_to service.id, client_service_path(@Client,service) %></td>
+    
         <td><%= service.address_origin %></td>
         <td><%= service.address_end %></td>
         <td><%= service.price %></td>
         <td><%= service.paymentype %></td>
         <td><%= service.observation %></td>
-        <td><%= service.client_id %></td>
-        <td><%= service.driver_id %></td>
+        <td><%= service.client.no_client %></td>
+        <td><%= service.driver.name_driver %></td>
         <td><%= service.valuation_id %></td>
-        <td><%=l service.created_at %></td>
+        <td><%= service.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('Evaluar Servicio', :default => t("Evaluar Servicio")),
                       edit_client_service_path(@Client,service), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      client_services_path(@Client,service),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+         
         </td>
       </tr>
     <% end %>
