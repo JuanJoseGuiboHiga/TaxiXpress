@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+  resources :routes
+  resources :payment_types
   devise_for :users, ActiveAdmin::Devise.config
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -14,6 +17,18 @@ Rails.application.routes.draw do
   end
   
   resources :drivers do
+  resources :services 
+  end
+  
+  resources :payment_types do
+  resources :services 
+  end
+  
+  resources :routes do
+  resources :services 
+  end
+  
+  resources :valuations do
   resources :services 
   end
   

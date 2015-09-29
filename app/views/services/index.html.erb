@@ -1,47 +1,44 @@
 <%- model_class = Service -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-    <h2><%="Del Cliente #{@Client.no_client}"%></h2>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
 
-      <th><%= model_class.human_attribute_name("Direccion origen") %></th>
-      <th><%= model_class.human_attribute_name("Direccion Destino") %></th>
+      <th><%= model_class.human_attribute_name("Ruta") %></th>
+      <th><%= model_class.human_attribute_name("Origen") %></th>
+      <th><%= model_class.human_attribute_name("Destino") %></th>
       <th><%= model_class.human_attribute_name("Precio") %></th>
       <th><%= model_class.human_attribute_name("Tipo de Pago") %></th>
-      <th><%= model_class.human_attribute_name("Observaciones") %></th>
+      <th><%= model_class.human_attribute_name("Observacion") %></th>
       <th><%= model_class.human_attribute_name("Cliente") %></th>
-      <th><%= model_class.human_attribute_name("Conductor") %></th>
-      <th><%= model_class.human_attribute_name("Evaluacion") %></th>
-      <th><%= model_class.human_attribute_name("Fecha del viaje") %></th>
+      <th><%= model_class.human_attribute_name("Coductor") %></th>
+
+      <th><%= model_class.human_attribute_name("Fecha") %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @services.each do |service| %>
       <tr>
-    
-        <td><%= service.address_origin %></td>
-        <td><%= service.address_end %></td>
-        <td><%= service.price %></td>
-        <td><%= service.paymentype %></td>
+        <td><%= service.route.description %></td>
+        <td><%= service.route.origin %></td>
+        <td><%= service.route.end %></td>
+        <td><%= service.route.price %></td>
+        <td><%= service.payment_type.description %></td>
         <td><%= service.observation %></td>
         <td><%= service.client.no_client %></td>
         <td><%= service.driver.name_driver %></td>
-        <td><%= service.valuation_id %></td>
-        <td><%= service.created_at %></td>
+       
+        <td><%=l service.created_at %></td>
         <td>
-          <%= link_to t('Evaluar Servicio', :default => t("Evaluar Servicio")),
+          <%= link_to t('.edit', :default => t("Evaluar Servicio")),
                       edit_client_service_path(@Client,service), :class => 'btn btn-default btn-xs' %>
-         
+   
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_client_service_path(@Client),
-            :class => 'btn btn-primary' %>

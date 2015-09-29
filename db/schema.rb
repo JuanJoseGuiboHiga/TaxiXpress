@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926211548) do
+ActiveRecord::Schema.define(version: 20150928213146) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -89,21 +89,36 @@ ActiveRecord::Schema.define(version: 20150926211548) do
   add_index "drivers", ["email"], name: "index_drivers_on_email", unique: true, using: :btree
   add_index "drivers", ["reset_password_token"], name: "index_drivers_on_reset_password_token", unique: true, using: :btree
 
+  create_table "payment_types", force: :cascade do |t|
+    t.string   "description", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string   "description", limit: 255
+    t.string   "origin",      limit: 255
+    t.string   "end",         limit: 255
+    t.string   "price",       limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "services", force: :cascade do |t|
-    t.string   "address_origin", limit: 255
-    t.string   "address_end",    limit: 255
-    t.string   "price",          limit: 255
-    t.string   "paymentype",     limit: 255
-    t.string   "observation",    limit: 255
-    t.integer  "client_id",      limit: 4
-    t.integer  "driver_id",      limit: 4
-    t.integer  "valuation_id",   limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "route_id",        limit: 4
+    t.integer  "payment_type_id", limit: 4
+    t.string   "observation",     limit: 255
+    t.integer  "client_id",       limit: 4
+    t.integer  "driver_id",       limit: 4
+    t.integer  "valuation_id",    limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "services", ["client_id"], name: "index_services_on_client_id", using: :btree
   add_index "services", ["driver_id"], name: "index_services_on_driver_id", using: :btree
+  add_index "services", ["payment_type_id"], name: "index_services_on_payment_type_id", using: :btree
+  add_index "services", ["route_id"], name: "index_services_on_route_id", using: :btree
   add_index "services", ["valuation_id"], name: "index_services_on_valuation_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -132,5 +147,7 @@ ActiveRecord::Schema.define(version: 20150926211548) do
 
   add_foreign_key "services", "clients"
   add_foreign_key "services", "drivers"
+  add_foreign_key "services", "payment_types"
+  add_foreign_key "services", "routes"
   add_foreign_key "services", "valuations"
 end
