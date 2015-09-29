@@ -47,7 +47,7 @@
   <%= link_to "TaxiXpress", root_path  %>
   <div class='registrese'>
     <%= image_tag("logoregistro.png") %>
-    <% if client_signed_in? %>
+    <% if client_signed_in? || driver_signed_in? %>
           <li class="col-md">
             <%= link_to "Cerrar Sesion", destroy_client_session_path, method: :delete %>          
           </li>

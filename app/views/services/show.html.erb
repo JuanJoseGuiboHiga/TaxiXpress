@@ -10,12 +10,10 @@
   <dd><%= @service.payment_type_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:observation) %>:</strong></dt>
   <dd><%= @service.observation %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:client_id) %>:</strong></dt>
-  <dd><%= @service.client_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:driver_id) %>:</strong></dt>
   <dd><%= @service.driver_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:valuation_id) %>:</strong></dt>
-  <dd><%= @service.valuation_id %></dd>
+ <dd><%= image_tag @service.driver.picture.url(:medium) %></dd>
+  
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

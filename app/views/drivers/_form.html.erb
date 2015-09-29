@@ -1,4 +1,4 @@
-<%= simple_form_for @driver, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @driver, :html => { class: 'form-horizontal', multipart: true } do |f| %>
   <%= f.input :name_driver %>
   <%= error_span(@driver[:name_driver]) %>
   <%= f.input :address_driver %>
@@ -26,10 +26,12 @@
   <%= error_span(@driver[:current_sign_in_ip]) %>
   <%= f.input :last_sign_in_ip %>
   <%= error_span(@driver[:last_sign_in_ip]) %>
+    <%= f.input :picture, as: :file %>
+  <%= error_span(@driver[:picture]) %>
+  
 
 
-
-  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= f.button :submit,drivers_path, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 drivers_path, :class => 'btn btn-default' %>
 <% end %>

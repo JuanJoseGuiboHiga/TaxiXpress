@@ -5,9 +5,8 @@
   <%= error_span(@service[:observation]) %>
   <%=f.association :client , label_method: :no_client%>
   <%= f.association :driver, label_method: :name_driver%>
-  
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                client_services_path, :class => 'btn btn-default' %>
+   <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.Cancel', :default => t("helpers.links.cancel")),
+                paginaprincipal_usuario_index_path, :class => 'btn btn-default' %>
 <% end %>
 

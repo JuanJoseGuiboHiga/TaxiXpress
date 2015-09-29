@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :valuations
 
-  devise_for :drivers
+  devise_for :drivers , controllers: { sessions: "drivers/sessions",registrations: "drivers/registrations" }
   
-  devise_for :clients
+  devise_for :clients , controllers: { sessions: "clients/sessions", registrations: "clients/registrations"} 
   resources :clients do 
   resources :services 
   end

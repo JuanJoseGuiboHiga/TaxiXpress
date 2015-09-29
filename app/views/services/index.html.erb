@@ -14,7 +14,6 @@
       <th><%= model_class.human_attribute_name("Observacion") %></th>
       <th><%= model_class.human_attribute_name("Cliente") %></th>
       <th><%= model_class.human_attribute_name("Coductor") %></th>
-
       <th><%= model_class.human_attribute_name("Fecha") %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -29,9 +28,8 @@
         <td><%= service.payment_type.description %></td>
         <td><%= service.observation %></td>
         <td><%= service.client.no_client %></td>
-        <td><%= service.driver.name_driver %></td>
-       
-        <td><%=l service.created_at %></td>
+        <td><%= link_to  service.driver.name_driver,driver_path(service.driver,service.client) %></td>
+        <td><%= service.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("Evaluar Servicio")),
                       edit_client_service_path(@Client,service), :class => 'btn btn-default btn-xs' %>
