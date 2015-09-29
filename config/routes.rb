@@ -41,41 +41,13 @@ Rails.application.routes.draw do
   get 'contacto', controller: :static , action: :contacto , alias:'contacto'
 
 
-  get 'servicio_precio_usaurio/index'
-
-  get 'consultar_servicio_usuario/index'
-
-  get 'reporte_taxis_usuario/index'
-
-  get 'servicio_ruta_usuario/index'
-
   get 'notificacion_contacto_usuario/index'
-
-
-  get 'reportes_servicios_taxista/index'
-
-  get 'taxis_asignados_taxista/index'
-
-  get 'notificacion_aceptar_taxista/index'
-
-  get 'notificacion_descarga_taxista/index'
-
-  get 'solicitudes_taxista/index'
-
-  get 'promedio_valoracion_taxista/index'
 
 
   get 'pagina_principal_taxista/index'
 
   get 'login_taxista/index'
 
-  get 'notificacion_registro/index'
-
-  get 'precio/index'
-
-  get 'ranking_taxista/index'
-
-  get 'seleccionar_taxista/index'
 
   get 'paginaprincipal_usuario/index'
 
