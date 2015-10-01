@@ -1,6 +1,6 @@
 <%- model_class = Service -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%=t 'Reporte de Servicio' %></h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -10,12 +10,11 @@
       <th><%= model_class.human_attribute_name("Origen") %></th>
       <th><%= model_class.human_attribute_name("Destino") %></th>
       <th><%= model_class.human_attribute_name("Precio") %></th>
-      <th><%= model_class.human_attribute_name("Tipo de Pago") %></th>
       <th><%= model_class.human_attribute_name("Observacion") %></th>
-      <th><%= model_class.human_attribute_name("Cliente") %></th>
       <th><%= model_class.human_attribute_name("Coductor") %></th>
       <th><%= model_class.human_attribute_name("Fecha") %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= model_class.human_attribute_name("Evaluaciones") %></th>
+      <th><%=t 'Evaluar' %></th>
     </tr>
   </thead>
   <tbody>
@@ -25,11 +24,10 @@
         <td><%= service.route.origin %></td>
         <td><%= service.route.end %></td>
         <td><%= service.route.price %></td>
-        <td><%= service.payment_type.description %></td>
         <td><%= service.observation %></td>
-        <td><%= service.client.no_client %></td>
         <td><%= link_to  service.driver.name_driver,driver_path(service.driver,service.client) %></td>
-        <td><%= service.created_at %></td>
+        <td><%= service.created_at.to_date%></td>
+        <td><%= service.valuation.description_valuation %></td>
         <td>
           <%= link_to t('.edit', :default => t("Evaluar Servicio")),
                       edit_client_service_path(@Client,service), :class => 'btn btn-default btn-xs' %>

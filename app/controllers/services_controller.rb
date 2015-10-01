@@ -5,7 +5,7 @@ class ServicesController < ApplicationController
   # GET /services.json
   def index
     @Client=Client.find(params[:client_id])
-    @services = Service.all
+    @services =  @Client.services
   end
 
   # GET /services/1
@@ -27,11 +27,12 @@ class ServicesController < ApplicationController
   # POST /services
   # POST /services.json
   def create
+    @Client=Client.find(params[:client_id])
     @service = Service.new(service_params)
-
+    @service.client=@Client
     respond_to do |format|
       if @service.save
-        format.html { redirect_to client_services_url, notice: 'Service was successfully created.' }
+        format.html { redirect_to client_services_url, notice: 'Se a registrado el servicio' }
         format.json { render :show, status: :created, location: @service }
       else
         format.html { render :new }
@@ -73,7 +74,7 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:route_id, :payment_type_id, :observation, :client_id, :driver_id, :valuation_id)
+      params.require(:service).permit(:route_id, :payment_type_id, :observation,:client_id, :driver_id, :valuation_id)
     end
     
     def driver_name
@@ -83,4 +84,8 @@ class ServicesController < ApplicationController
     def client_name
     self.client.no_client
    end
+   
+ 
+   
+
 end

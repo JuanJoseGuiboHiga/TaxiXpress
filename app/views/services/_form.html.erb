@@ -1,12 +1,11 @@
 <%= simple_form_for [@Client,@service], :html => { :class => 'form-horizontal' } do |f| %>
    <%= f.association :route, label_method: :description%>
    <%= f.association :payment_type, label_method: :description%>
-  <%= f.input :observation %>
-  <%= error_span(@service[:observation]) %>
-  <%=f.association :client , label_method: :no_client%>
+
   <%= f.association :driver, label_method: :name_driver%>
    <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.Cancel', :default => t("helpers.links.cancel")),
                 paginaprincipal_usuario_index_path, :class => 'btn btn-default' %>
+
 <% end %>
 

@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
 
-  resources :routes
-  resources :payment_types
+
   devise_for :users, ActiveAdmin::Devise.config
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :valuations
+
 
   devise_for :drivers , controllers: { sessions: "drivers/sessions",registrations: "drivers/registrations" }
   
@@ -23,14 +22,15 @@ Rails.application.routes.draw do
   resources :payment_types do
   resources :services 
   end
+    resources :valuations do
+  resources :services 
+  end
   
   resources :routes do
   resources :services 
   end
   
-  resources :valuations do
-  resources :services 
-  end
+
   
   get 'pagina_principal_administrador/index'
 
