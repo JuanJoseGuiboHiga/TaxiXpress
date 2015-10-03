@@ -3,13 +3,13 @@
     <h1 class="text-center">Bienvenido a TaxiXpress</h1>
     <br><br><br><br><br>
     <div class="text-center">
-        <%= link_to "Solicitar Taxi", new_service_path, :class => "btn btn-lg boton" %>
-        <%= link_to "Reporte de Taxis", reporte_taxis_usuario_index_path, :class => "btn btn-lg boton" %>
-        <%= link_to "Consultar Servicio de Taxi", consultar_servicio_usuario_index_path, :class => "btn btn-lg boton" %>
+        <%= link_to "Solicitar Taxi", new_client_service_path(@client), :class => "btn btn-lg boton" %>
+        <%= link_to "Reporte de Taxis", client_services_path(@client), :class => "btn btn-lg boton" %>
+
         <!--
-        <%= button_to "Solicitar Taxi",   new_service_path, :class => "btn boton", :method => :get  %>
-        <%= button_to "Reporte de Taxis",  reporte_taxis_usuario_index_path, :class => "btn boton", :method => :get  %>
-        <%= button_to "Consultar Servicio de Taxi",  consultar_servicio_usuario_index_path, :class => "btn boton", :method => :get  %>
+        <%= button_to "Solicitar Taxi",   new_client_service_path(@client), :class => "btn boton", :method => :get  %>
+        <%= button_to "Reporte de Taxis",  client_services_path(@client), :class => "btn boton", :method => :get  %>
+
         -->
     </div>
 </div>
