@@ -33,6 +33,13 @@ figure img {
 }
 .boton {
   background: #f4a903;
+  border:none;
+  color:#fff;
+}
+.boton:hover{
+  background: #fff;
+  color:#f4a903;
+  border:none;
 }
 .margenMaximo {
   margin: 50px 0;
@@ -119,7 +126,7 @@ footer .datos .imagenSocial {
 }
 .cuadroInformativo .titulo img.taxista,
 .cuadroInformativo .cuadroTexto img.taxista {
-  background-position-x: -60px;
+  background-position-x: 0px;
 }
 .cuadroInformativo .titulo img.administrador,
 .cuadroInformativo .cuadroTexto img.administrador {
@@ -140,6 +147,16 @@ footer .datos .imagenSocial {
 .cuadroTextoGrande .scrollY {
   height: 100%;
   overflow-y: auto;
+}
+.formulario .form-group{
+  margin:0;
+}
+.tablaFormulario{
+  width:100%;
+}
+.tablaFormulario td{
+  vertical-align:top;
+  padding:8px;
 }
 #cuadroQuienesSomos {
   display: none;
