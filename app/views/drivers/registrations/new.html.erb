@@ -1,0 +1,24 @@
+<h2>Ingreso Taxista</h2>
+
+<%= simple_form_for @driver, :html => { class: 'form-horizontal', multipart: true } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name_driver %>
+    <%= error_span(@driver[:name_driver]) %>
+    <%= f.input :address_driver %>
+    <%= error_span(@driver[:address_driver]) %>
+    <%= f.input :telephone_driver %>
+    <%= error_span(@driver[:telephone_driver]) %>
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :picture, as: :file %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "drivers/shared/links" %>
