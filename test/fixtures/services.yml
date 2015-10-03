@@ -1,20 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  address_origin: MyString
-  address_end: MyString
-  price: MyString
-  paymentype: MyString
+  route_id: 
+  payment_type_id: 
   observation: MyString
   client_id: 
   driver_id: 
   valuation_id: 
 
 two:
-  address_origin: MyString
-  address_end: MyString
-  price: MyString
-  paymentype: MyString
+  route_id: 
+  payment_type_id: 
   observation: MyString
   client_id: 
   driver_id: 

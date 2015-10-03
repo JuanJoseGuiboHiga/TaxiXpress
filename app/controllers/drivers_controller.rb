@@ -25,7 +25,7 @@ class DriversController < ApplicationController
   # POST /drivers.json
   def create
     @driver = Driver.new(driver_params)
-    @driver.status_driver = 1
+
 
     respond_to do |format|
       if @driver.save
@@ -70,6 +70,6 @@ class DriversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def driver_params
-      params.require(:driver).permit(:name_driver, :address_driver, :telephone_driver, :status_driver, :placa_driver)
+      params.require(:driver).permit(:name_driver, :address_driver, :telephone_driver, :status_driver, :placa_driver, :picture)
     end
 end

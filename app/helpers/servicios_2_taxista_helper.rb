@@ -1,2 +1,0 @@
-module Servicios2TaxistaHelper
-end

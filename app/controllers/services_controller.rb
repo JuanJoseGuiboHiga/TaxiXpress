@@ -4,7 +4,8 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.all
+    @Client=Client.find(params[:client_id])
+    @services =  @Client.services
   end
 
   # GET /services/1
@@ -14,21 +15,24 @@ class ServicesController < ApplicationController
 
   # GET /services/new
   def new
+    @Client=Client.find(params[:client_id])
     @service = Service.new
   end
 
   # GET /services/1/edit
   def edit
+
   end
 
   # POST /services
   # POST /services.json
   def create
+    @Client=Client.find(params[:client_id])
     @service = Service.new(service_params)
-
+    @service.client=@Client
     respond_to do |format|
       if @service.save
-        format.html { redirect_to @service, notice: 'Service was successfully created.' }
+        format.html { redirect_to client_services_url, notice: 'Se a registrado el servicio' }
         format.json { render :show, status: :created, location: @service }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class ServicesController < ApplicationController
   def update
     respond_to do |format|
       if @service.update(service_params)
-        format.html { redirect_to @service, notice: 'Service was successfully updated.' }
+        format.html { redirect_to client_services_path, notice: 'Service was successfully updated.' }
         format.json { render :show, status: :ok, location: @service }
       else
         format.html { render :edit }
@@ -64,11 +68,24 @@ class ServicesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_service
+      @Client=Client.find(params[:client_id])
       @service = Service.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:address_origin, :address_end, :price, :paymentype, :observation, :client_id, :driver_id, :valuation_id)
+      params.require(:service).permit(:route_id, :payment_type_id, :observation,:client_id, :driver_id, :valuation_id)
     end
+    
+    def driver_name
+    self.driver.name_driver
+   end
+   
+    def client_name
+    self.client.no_client
+   end
+   
+ 
+   
+
 end

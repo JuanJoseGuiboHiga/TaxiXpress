@@ -5,44 +5,26 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name_driver) %></th>
-      <th><%= model_class.human_attribute_name(:address_driver) %></th>
-      <th><%= model_class.human_attribute_name(:telephone_driver) %></th>
-      <th><%= model_class.human_attribute_name(:status_driver) %></th>
-      <th><%= model_class.human_attribute_name(:placa_driver) %></th>
-      <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:encrypted_password) %></th>
-      <th><%= model_class.human_attribute_name(:reset_password_token) %></th>
-      <th><%= model_class.human_attribute_name(:reset_password_sent_at) %></th>
-      <th><%= model_class.human_attribute_name(:remember_created_at) %></th>
-      <th><%= model_class.human_attribute_name(:current_sign_in_at) %></th>
-      <th><%= model_class.human_attribute_name(:last_sign_in_at) %></th>
-      <th><%= model_class.human_attribute_name(:current_sign_in_ip) %></th>
-      <th><%= model_class.human_attribute_name(:last_sign_in_ip) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name("Nombre") %></th>
+      <th><%= model_class.human_attribute_name("Direccion") %></th>
+      <th><%= model_class.human_attribute_name("Telefono") %></th>
+      <th><%= model_class.human_attribute_name("Status") %></th>
+      <th><%= model_class.human_attribute_name("Placa") %></th>
+      <th><%= model_class.human_attribute_name("Correo") %></th>
+        <th><%= model_class.human_attribute_name("Foto") %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @drivers.each do |driver| %>
       <tr>
-        <td><%= link_to driver.id, driver_path(driver) %></td>
-        <td><%= driver.name_driver %></td>
+        <td><%= link_to  driver.name_driver,driver_path(driver) %></td>
         <td><%= driver.address_driver %></td>
         <td><%= driver.telephone_driver %></td>
         <td><%= driver.status_driver %></td>
         <td><%= driver.placa_driver %></td>
         <td><%= driver.email %></td>
-        <td><%= driver.encrypted_password %></td>
-        <td><%= driver.reset_password_token %></td>
-        <td><%= driver.reset_password_sent_at %></td>
-        <td><%= driver.remember_created_at %></td>
-        <td><%= driver.current_sign_in_at %></td>
-        <td><%= driver.last_sign_in_at %></td>
-        <td><%= driver.current_sign_in_ip %></td>
-        <td><%= driver.last_sign_in_ip %></td>
-        <td><%=l driver.created_at %></td>
+         <td><%= image_tag driver.picture.url(:thumb) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_driver_path(driver), :class => 'btn btn-default btn-xs' %>

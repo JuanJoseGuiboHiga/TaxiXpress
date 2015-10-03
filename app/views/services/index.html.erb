@@ -1,41 +1,40 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Services</h1>
-
-<table>
+<%- model_class = Service -%>
+<div class="page-header">
+  <h1><%=t 'Reporte de Servicio' %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Address origin</th>
-      <th>Address end</th>
-      <th>Price</th>
-      <th>Paymentype</th>
-      <th>Observation</th>
-      <th>Client</th>
-      <th>Driver</th>
-      <th>Valuation</th>
-      <th colspan="3"></th>
+
+      <th><%= model_class.human_attribute_name("Ruta") %></th>
+      <th><%= model_class.human_attribute_name("Origen") %></th>
+      <th><%= model_class.human_attribute_name("Destino") %></th>
+      <th><%= model_class.human_attribute_name("Precio") %></th>
+      <th><%= model_class.human_attribute_name("Observacion") %></th>
+      <th><%= model_class.human_attribute_name("Coductor") %></th>
+      <th><%= model_class.human_attribute_name("Fecha") %></th>
+      <th><%= model_class.human_attribute_name("Evaluaciones") %></th>
+      <th><%=t 'Evaluar' %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @services.each do |service| %>
       <tr>
-        <td><%= service.address_origin %></td>
-        <td><%= service.address_end %></td>
-        <td><%= service.price %></td>
-        <td><%= service.paymentype %></td>
+        <td><%= service.route.description %></td>
+        <td><%= service.route.origin %></td>
+        <td><%= service.route.end %></td>
+        <td><%= service.route.price %></td>
         <td><%= service.observation %></td>
-        <td><%= service.client %></td>
-        <td><%= service.driver %></td>
-        <td><%= service.valuation %></td>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to  service.driver.name_driver,driver_path(service.driver,service.client) %></td>
+        <td><%= service.created_at.to_date%></td>
+        <td><%= service.valuation.description_valuation %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("Evaluar Servicio")),
+                      edit_client_service_path(@Client,service), :class => 'btn btn-default btn-xs' %>
+   
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Service', new_service_path %>

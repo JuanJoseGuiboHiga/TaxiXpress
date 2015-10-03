@@ -1,12 +1,37 @@
 Rails.application.routes.draw do
 
-  resources :services
-  resources :valuations
 
-  devise_for :drivers
-  resources :drivers
-  devise_for :clients
-  resources :clients
+
+  devise_for :users, ActiveAdmin::Devise.config
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+
+  devise_for :drivers , controllers: { sessions: "drivers/sessions",registrations: "drivers/registrations" }
+  
+  devise_for :clients , controllers: { sessions: "clients/sessions", registrations: "clients/registrations"} 
+  resources :clients do 
+  resources :services 
+  end
+  
+  resources :drivers do
+  resources :services 
+  end
+  
+  resources :payment_types do
+  resources :services 
+  end
+    resources :valuations do
+  resources :services 
+  end
+  
+  resources :routes do
+  resources :services 
+  end
+  
+
+  
   get 'pagina_principal_administrador/index'
 
   get 'inicio', controller: :static , action: :inicio , alias:'inicio'
@@ -16,41 +41,13 @@ Rails.application.routes.draw do
   get 'contacto', controller: :static , action: :contacto , alias:'contacto'
 
 
-  get 'servicio_precio_usaurio/index'
-
-  get 'consultar_servicio_usuario/index'
-
-  get 'reporte_taxis_usuario/index'
-
-  get 'servicio_ruta_usuario/index'
-
   get 'notificacion_contacto_usuario/index'
-
-
-  get 'reportes_servicios_taxista/index'
-
-  get 'taxis_asignados_taxista/index'
-
-  get 'notificacion_aceptar_taxista/index'
-
-  get 'notificacion_descarga_taxista/index'
-
-  get 'solicitudes_taxista/index'
-
-  get 'promedio_valoracion_taxista/index'
 
 
   get 'pagina_principal_taxista/index'
 
   get 'login_taxista/index'
 
-  get 'notificacion_registro/index'
-
-  get 'precio/index'
-
-  get 'ranking_taxista/index'
-
-  get 'seleccionar_taxista/index'
 
   get 'paginaprincipal_usuario/index'
 

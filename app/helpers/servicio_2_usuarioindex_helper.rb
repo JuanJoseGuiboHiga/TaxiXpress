@@ -1,2 +1,0 @@
-module Servicio2UsuarioindexHelper
-end

@@ -1,18 +1,11 @@
-<%= simple_form_for(@service) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for [@Client,@service], :html => { :class => 'form-horizontal' } do |f| %>
+   <%= f.association :route, label_method: :description%>
+   <%= f.association :payment_type, label_method: :description%>
 
-  <div class="form-inputs">
-    <%= f.input :address_origin %>
-    <%= f.input :address_end %>
-    <%= f.input :price %>
-    <%= f.input :paymentype %>
-    <%= f.input :observation %>
-    <%= f.association :client %>
-    <%= f.association :driver %>
-    <%= f.association :valuation %>
-  </div>
+  <%= f.association :driver, label_method: :name_driver%>
+   <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.Cancel', :default => t("helpers.links.cancel")),
+                paginaprincipal_usuario_index_path, :class => 'btn btn-default' %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
 <% end %>
+
