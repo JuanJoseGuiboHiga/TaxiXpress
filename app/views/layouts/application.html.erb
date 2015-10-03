@@ -13,9 +13,20 @@
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
     <![endif]-->
+    <!--
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
+    
+    
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
     <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
@@ -42,61 +53,93 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
- <div class="brand">
-  <%= image_tag("logo.png") %>
-  <%= link_to "TaxiXpress", root_path  %>
-  <div class='registrese'>
-    <%= image_tag("logoregistro.png") %>
-    <% if client_signed_in? %>
-          <li class="col-md">
-            <%= link_to "Cerrar Sesion", destroy_client_session_path, method: :delete %>          
-          </li>
-          <%else%>
-          <li class="col-md">
-            <%= link_to "Iniciar sesion", new_client_session_path %>          
-          </li>
-          <li class="col-md">
-            <%= link_to "Registarse", new_client_registration_path %>          
-          </li>
-          <%end%>
-       
- </div>
- 
-   <div class="tabsalineados">
-    <%= tabs %>   </div>
-   </div>
-
-
-   
-<div class="fondo">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
+ <div class="container">
+   <div class="row">
+     <div class="col-md-4">
+       <figure >
+              <%= image_tag("logoTipo.png") %>
+           
+        		
+    	</figure>
+     </div>
       
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
-   </div>
-
-   <a></a>
-   <a></a>
-
-      <footer>
-        <div class='footerInicial'></div>
-        <p>&copy; Todos los Derechos Reservados a TaxiXpress</p>
-        <div class="listaiconos">
-        <%= link_to image_tag("icono-face-08.png"), "http://www.facebook.com" %>
-        <%= link_to image_tag("icono-twitter.png"), "https://twitter.com/?lang=es" %>
-        <%= link_to image_tag("icono-g.png"), "https://plus.google.com/" %>
-        <%= link_to image_tag("icono-youtube.png"), "https://www.youtube.com/" %>
-        </div>
-      </footer>
-
-    </div> <!-- /container -->
-
+      <h2 class=' col-md-offset-2 col-md-6 text-right'>
+        
+        <% if client_signed_in? %>
+              
+                <%= link_to "Cerrar Sesion", destroy_client_session_path, method: :delete %>          
+              
+              <%else%>
+              
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <%= link_to "Iniciar sesion", new_client_session_path %>          
+               
+                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true">  </span>
+                <%= link_to "Registarse", new_client_registration_path %>          
+              
+        <%end%>
+      </h2>  
+    </div>
+    <div class="tabsalineados" id="menu">
+      <%= tabs %>   
+    </div>
+  </div>
+  <div class="container">
+    <div class="contenidoPagina">
+                <figure>  
+                    <%= image_tag("fondo.jpg") %>
+                </figure>
+                <%= bootstrap_flash %>
+          <%= yield %>
+  </div>
+  </div>
+  
+   
+    <footer class="container">
+			<div id="barraNaranja">
+				
+			</div>
+			<div class="datos row">
+				<div class="col-md-2">
+					Aplicativos para moviles descargar:
+				</div>
+				<div class="col-md-4">
+					<div class="producto">
+						<span class="imagen" id="inicioApple">
+						</span>
+						<br>
+						<span>
+							IOS
+						</span>
+					</div>
+					<div class="producto">
+						<span class="imagen" id="inicioWindows">
+						</span>
+						<br>
+						<span>
+							WINDOWS PHONE
+						</span>
+					</div>
+					<div class="producto">
+						<span class="imagen" id="inicioAndroid">
+						</span>
+						<br>
+						<span>
+							ANDROID
+						</span>
+					</div>
+				</div>
+				<div class="col-md-offset-2 col-md-4 text-right">
+					<label for="">Búscamos</label>
+					<a class="imagenSocial" id="iconoFB" href="http://www.facebook.com" target="_blank"></a>
+					<a class="imagenSocial" id="iconoTW" href="http://www.twitter.com" target="_blank"></a>
+					<a class="imagenSocial" id="iconoGO" href="http://www.plus.google.com" target="_blank"></a>
+					<a class="imagenSocial" id="iconoYO" href="http://www.youtube.com" target="_blank"></a>
+				</div>
+				<p class="col-md-12 text-center" id="derechosReservados">
+					Todos los derechos reservados a TaxiXpress
+				</p>
+			</div>
+		</footer>
   </body>
 </html>

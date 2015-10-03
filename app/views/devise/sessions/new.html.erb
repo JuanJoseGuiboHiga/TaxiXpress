@@ -1,23 +1,23 @@
-<div class='contenedorsobre'>
-<div class='contenedorPrincipal'>
-  <div class='authImg'>
-  
-  <%= image_tag("usuario.png") %> 
+
+<div class='cuadroInformativo contenedorsobre'>
+  <div class='contenedorPrincipal'>
+    <h2 class="text-center titulo">
+			<%= image_tag  "ayuda.png", :class => "usuario" %>
+			Login
+		</h2>
   </div>
-<h2>Login</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
+    <%= f.input :email, required: false, autofocus: true, placeholder:"Email" %>
+    <%= f.input :password, required: false, placeholder:"Password" %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="form-actions text-center">
+    <%= f.submit 'Continuar', :class => 'btn boton' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
-</div>
 </div>

@@ -1,5 +1,4 @@
 Tabulous.setup do
-
   tabs do
 
       home_tab do

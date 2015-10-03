@@ -1,23 +1,55 @@
-
-<div class='contenedorsobre'>
-<div class='contenedorPrincipal'>
-<h1>Testimonios</h1>
-<p>
-   Utiliza este espacio para contarnos tu experiencia con nuestro servicio. Cualquier comentario es bien recibido.
-</p>
-<div class='contenedorComentarios'>
-<div class='comentarios'>
-    <div class='seccionComentarios'>
-      <%= image_tag("comentario01.jpg") %>
-      <p>El servicio me parecio excelente</p>
-      </div>
-</div>
-
-<div class='enviarComentario'>
-    <textarea rows="4" cols="50">
-Dejanos tu comentario.
-</textarea>
-
-</div>
-</div>
-</div>
+<div class="cuadroInformativo cuadroTextoGrande" id="cuandroTestimonio">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="textoNaranja">
+					Testimonio
+				</h1>
+				<p>
+					Utiliza este espacio para contarnos tu experiencia con nuestro servicio. Cualquier comentario es bien recibido.
+				</p>
+			</div>
+			<div class="col-md-6">
+				<p class="row">
+					<figure class="col-xs-4">
+					    <%= image_tag("comentario.jpg") %>
+					</figure>
+					<div class="col-xs-8">
+						<u>Comentario</u>
+						<p>
+							El servicio de taxi es muy bueno, pero debe mejorar en la limpieza del carro.
+						</p>
+					</div>
+				</p>
+				<p class="row">
+					<figure class="col-xs-4">
+						<%= image_tag("comentario.jpg") %>
+					</figure>
+					<div class="col-xs-8">
+						<u>Comentario</u>
+						<p>
+							El servicio de taxi es muy bueno, pero debe mejorar en la limpieza del carro.
+						</p>
+					</div>
+				</p>
+			</div>
+			<div class="col-md-6">
+				<textarea placeholder="Comentarios" class="form-control" id="" cols="30" rows="10"></textarea>
+			</div>
+			<div class="col-md-12 text-right">
+				<button type="button" class="btn boton" >
+					Enviar
+				</button>
+			</div>
+		</div>
+	</div>
+	<!--
+	<div id="comentarioEnviado" class="cuadroInformativo">
+		
+		<p class="textoNaranja text-center margenMaximo">
+			¡Gracias por tu comentario!
+		</p>
+		<p class="text-center">
+			<button class="btn boton">Continuar</button>
+		</p>
+	</div>
+	-->

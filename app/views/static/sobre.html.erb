@@ -1,14 +1,47 @@
-<div class='contenedorsobre'>
-<div class='contenedorPrincipal'>
-<div class'contenedorAlineado'>
-<div class='rightside'>
-<%= image_tag("logotipote.png") %>
+<div id="cuadroSomos" class="cuadroInformativo cuadroTextoGrande">
+	<div class="row">
+		<div class="col-md-6">
+			<h2 class="textoNaranja">
+				Taxi Express es una iniciativa que surgio gracias a un proyecto de la consultora Ingenieros Systems	
+			</h2>
+		</div>
+		<div class="col-md-6 text-center">
+		    <%= image_tag  "logotipote.png", :class => "my_class" %>
+		</div>
+		<div class="col-md-12 text-right">
+			<a role="button" class="btn boton" href="#quienes" onclick="mostrarQuienes()">
+				Siguiente
+			</a>
+		</div>
+	</div>
 </div>
-<div class='leftside'>
-<p>Taxi Express es una iniciativa que surgio gracias a un proyecto de la consultora Ingenieros Systems
-</p>
-
+<div id="cuadroQuienesSomos" class="cuadroInformativo cuadroTextoGrande">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="textoNaranja">
+				¿Quiénes Somos?
+			</h1>
+			<p>
+				Somos una empresa líder en el servicio de taxis con especialidad en atención en las áreas de turismo, transporte personal, transporte empresarial y Courier. Nuestra visión es afianzarnos y posicionarnos en el mercado nacional de servicio de transporte "TAXIS" comprometiéndonos así a brindar lo mejor al cliente y público en general. Así mismo, demostrando calidad, seguridad, puntualidad, comodidad y la garantía de que cada uno de nuestros clientes llegarán seguros a su destino final.
+			</p>
+			<p class="text-center">
+					<%= image_tag  "logotipote.png", :class => "my_class" %>
+			</p>
+		</div>
+		<div class="col-md-12 text-right">
+			<a role="button" class="btn boton"  onclick="mostrarSomos()">
+				Atras
+			</a>
+		</div>
+	</div>
 </div>
-</div>
-</div>
-</div>
+<script>
+    function mostrarQuienes(){
+    $("#cuadroQuienesSomos").fadeIn();
+    $("#cuadroSomos").fadeOut();
+    }
+     function mostrarSomos(){
+    $("#cuadroQuienesSomos").fadeOut();
+    $("#cuadroSomos").fadeIn();
+    }
+</script>

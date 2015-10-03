@@ -377,3 +377,8 @@ footer p {
     }
   
 }
+
+a,a:visited{
+    color: inherit !important;
+    text-decoration: none;
+}
