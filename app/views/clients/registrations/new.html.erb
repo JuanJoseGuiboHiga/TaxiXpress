@@ -1,4 +1,5 @@
-<h2>Registro Usuario</h2>
+<div class="cuadroInformativo cuadroTextoGrande">
+  <h2>Registro Usuario</h2>
 
 <%= simple_form_for @client, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.error_notification %>
@@ -17,3 +18,5 @@
 <% end %>
 
 <%= render "clients/shared/links" %>
+</div>
+
