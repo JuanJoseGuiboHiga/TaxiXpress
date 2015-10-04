@@ -1,3 +1,4 @@
+<div class="cuadroInformativo cuadroTextoGrande">
 <%= simple_form_for @driver, :html => { class: 'form-horizontal', multipart: true } do |f| %>
   <%= f.input :name_driver %>
   <%= error_span(@driver[:name_driver]) %>
@@ -35,3 +36,4 @@
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 drivers_path, :class => 'btn btn-default' %>
 <% end %>
+</div>
