@@ -2,15 +2,11 @@ Rails.application.routes.draw do
 
 
 
-  devise_for :users, ActiveAdmin::Devise.config
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
-
   devise_for :drivers , controllers: { sessions: "drivers/sessions",registrations: "drivers/registrations" }
   
   devise_for :clients , controllers: { sessions: "clients/sessions", registrations: "clients/registrations"} 
+  
+ devise_for :administrators , controllers: { sessions: "administrators/sessions", registrations: "administrators/registrations"} 
   resources :clients do 
   resources :services 
   end
@@ -30,7 +26,7 @@ Rails.application.routes.draw do
   resources :services 
   end
   
-
+  resources :administrators
   
   get 'pagina_principal_administrador/index'
 

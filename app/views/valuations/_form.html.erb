@@ -1,8 +1,8 @@
 <%= simple_form_for @valuation, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :description_valuation %>
+  <%= f.input :description_valuation ,label:"Descripción" %>
   <%= error_span(@valuation[:description_valuation]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                valuations_path, :class => 'btn btn-default' %>
+                pagina_principal_administrador_index_path, :class => 'btn btn-default' %>
 <% end %>

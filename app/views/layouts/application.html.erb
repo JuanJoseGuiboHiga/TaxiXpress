@@ -65,7 +65,7 @@
       
       <h2 class=' col-md-offset-2 col-md-6 text-right'>
         
-        <% if client_signed_in? || driver_signed_in? %>
+        <% if client_signed_in? || driver_signed_in? || administrator_signed_in?  %>
               
                 <%= link_to "Cerrar Sesion", destroy_client_session_path, method: :delete %>          
               
