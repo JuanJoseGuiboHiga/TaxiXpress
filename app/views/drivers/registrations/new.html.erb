@@ -1,5 +1,5 @@
 <div class="cuadroInformativo cuadroTextoGrande">
-<h2>Ingreso Taxista</h2>
+<h2>Registrar Taxista</h2>
 
 <%= simple_form_for @driver, :html => { class: 'form-horizontal', multipart: true } do |f| %>
   <%= f.error_notification %>
@@ -9,58 +9,54 @@
       <tbody>
         <tr>
           <td>
-            <%= f.input :name_driver %>
+            <%= f.input :name_driver,  label:"Nombre"%>
             <%= error_span(@driver[:name_driver]) %>
           </td>
           <td>
-            <%= f.input :address_driver %>
+            <%= f.input :address_driver, label:"Direccion" %>
             <%= error_span(@driver[:address_driver]) %>
           </td>
         </tr>
         <tr>
           <td>
-            <%= f.input :telephone_driver %>
+            <%= f.input :telephone_driver , label:"Telefono"%>
             <%= error_span(@driver[:telephone_driver]) %>
           </td>
           <td>
             <%= f.input :email, required: true, autofocus: true %>
           </td>
+          
         </tr>
         <tr>
           <td>
-            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) , label:"Password"%>
           </td>
           <td>
-            <%= f.input :password_confirmation, required: true %>
+            <%= f.input :password_confirmation, required: true , label:"Repita Password"%>
           </td>
         </tr>
         <tr>
+           <td>
+            <%= f.input :placa_driver , label:"Placa"%>
+          </td>
+        </tr>
+          <tr>
           <td>
-            <%= f.input :picture, as: :file %>
+            <%= f.input :picture, as: :file , label:"Foto" %>
           </td>
           <td>
-            <%= f.button :submit, "Sign up", :class=>"boton" %>
-            <%= render "drivers/shared/links" %>
+            <%= f.button :submit, "Registrar Taxista", :class=>"boton" %>
+           
           </td>
         </tr>
       </tbody>
     </table>
     <!--
-    <%= f.input :name_driver %>
-    <%= error_span(@driver[:name_driver]) %>
-    <%= f.input :address_driver %>
-    <%= error_span(@driver[:address_driver]) %>
-    <%= f.input :telephone_driver %>
-    <%= error_span(@driver[:telephone_driver]) %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-    <%= f.input :picture, as: :file %>
+
     -->
   </div>
 <!--
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
   </div>
   -->
 <% end %>

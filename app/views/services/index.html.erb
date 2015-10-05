@@ -12,13 +12,13 @@
       <th><%= model_class.human_attribute_name("Destino") %></th>
       <th><%= model_class.human_attribute_name("Precio") %></th>
       <th><%= model_class.human_attribute_name("Observacion") %></th>
-      <th><%= model_class.human_attribute_name("Coductor") %></th>
+     
       <th><%= model_class.human_attribute_name("Fecha") %></th>
        <% if current_client%>
       <th><%= model_class.human_attribute_name("Evaluaciones") %></th>
+       <th><%= model_class.human_attribute_name("Coductor") %></th>
       <th><%=t 'Evaluar' %></th>
         <% elsif current_driver %>
-        <th></th>
         <th></th>
         <th><%= model_class.human_attribute_name("Cliente") %></th>
         <% end %>
@@ -32,19 +32,20 @@
         <td><%= service.route.end %></td>
         <td><%= service.route.price %></td>
         <td><%= service.observation %></td>
-        <td><%= link_to  service.driver.name_driver,driver_path(service.driver,@client) %></td>
+        
         <td><%= service.created_at.to_date%></td>
         <td><%= service.valuation.description_valuation %></td>
-     
+         <% if current_client%>
+          <td><%= link_to  service.driver.name_driver,driver_path(service.driver,@client) %></td>
         <td>
-          <% if current_client%>
-          <%= link_to t('.edit', :default => t("Evaluar Servicio")),
-                      edit_client_service_path(@Client,service), :class => 'btn btn-default btn-xs' %>
-       
-        </td>
-          <% elsif current_driver %>
+          
+       <%= link_to t('.edit', :default => t("Evaluar Servicio")),
+                      edit_client_service_path(@Client,service), :class => 'btn btn-default btn-xs' %> 
+        <% elsif current_driver %>
         <th><%=service.client.no_client %></th>
         <% end %>
+        </td>
+         
       </tr>
      
     <% end %>

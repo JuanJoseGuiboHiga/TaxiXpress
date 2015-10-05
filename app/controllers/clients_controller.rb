@@ -1,6 +1,5 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
-
   # GET /clients
   # GET /clients.json
   def index
@@ -71,4 +70,6 @@ class ClientsController < ApplicationController
     def client_params
       params.require(:client).permit(:no_client, :telephone)
     end
+    
+    
 end

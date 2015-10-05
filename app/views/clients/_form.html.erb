@@ -7,22 +7,9 @@
   <%= error_span(@client[:email]) %>
   <%= f.input :encrypted_password %>
   <%= error_span(@client[:encrypted_password]) %>
-  <%= f.input :reset_password_token %>
-  <%= error_span(@client[:reset_password_token]) %>
-  <%= f.input :reset_password_sent_at %>
-  <%= error_span(@client[:reset_password_sent_at]) %>
-  <%= f.input :remember_created_at %>
-  <%= error_span(@client[:remember_created_at]) %>
-  <%= f.input :current_sign_in_at %>
-  <%= error_span(@client[:current_sign_in_at]) %>
-  <%= f.input :last_sign_in_at %>
-  <%= error_span(@client[:last_sign_in_at]) %>
-  <%= f.input :current_sign_in_ip %>
-  <%= error_span(@client[:current_sign_in_ip]) %>
-  <%= f.input :last_sign_in_ip %>
-  <%= error_span(@client[:last_sign_in_ip]) %>
+
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                clients_path, :class => 'btn btn-default' %>
+                pagina_principal_administrador_index_path, :class => 'btn btn-default' %>
 <% end %>
