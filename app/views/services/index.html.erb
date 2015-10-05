@@ -25,7 +25,7 @@
         <td><%= service.route.end %></td>
         <td><%= service.route.price %></td>
         <td><%= service.observation %></td>
-        <td><%= link_to  service.driver.name_driver,driver_path(service.driver,service.client) %></td>
+        <td><%= link_to  service.driver.name_driver,driver_path(service.driver,@client) %></td>
         <td><%= service.created_at.to_date%></td>
         <td><%= service.valuation.description_valuation %></td>
         <td>
@@ -34,6 +34,11 @@
    
         </td>
       </tr>
+      <p>
+  Download:
+    <%= link_to "Descargar archivo",client_services_path(format: "csv") %> 
+  
+</p>
     <% end %>
   </tbody>
 </table>
