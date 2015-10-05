@@ -1,10 +1,17 @@
 
-<div class='contenedorsobre'>
-<div class='contenedorPrincipal'>
-<h1>Bienvenido a TaxiXpress</h1>
-<div class='botonesPaginaPrincipal'>
-<%= button_to "Ingresar Taxista",     new_driver_registration_path, :class => "myButton", :method => :get  %>
-<%= button_to "Crear  Usuarios",  new_client_path, :class => "myButton", :method => :get  %>
+
+<div class="cuadroInformativo cuadroTextoGrande">
+    <h1 class="text-center">Bienvenido a TaxiXpress</h1>
+    <br><br><br><br><br>
+    <div class="text-center">
+        <%= link_to "Ingresar Taxista", new_driver_registration_path, :class => "btn btn-lg boton" %>
+        <%= link_to "Crear  Usuarios", new_client_path, :class => "btn btn-lg boton" %>
+        <%= link_to "Crear  Rutas", new_route_path, :class => "btn btn-lg boton" %>
+        <!--
+        <%= button_to "Ingresar Taxista",     new_driver_registration_path, :class => "boton btn-lg", :method => :get  %>
+        <%= button_to "Crear  Usuarios",  new_client_path, :class => "boton btn-lg", :method => :get  %>
+        <%= button_to "Crear  Rutas",  new_route_path, :class => "boton btn-lg", :method => :get  %>
+        -->
+    </div>
 </div>
-</div>
-</div>
+

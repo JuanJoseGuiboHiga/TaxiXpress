@@ -154,5 +154,4 @@ ActiveRecord::Schema.define(version: 20150929144243) do
   add_foreign_key "services", "payment_types"
   add_foreign_key "services", "routes"
   add_foreign_key "services", "valuations"
-
 end

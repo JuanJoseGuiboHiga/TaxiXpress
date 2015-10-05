@@ -1,10 +1,15 @@
-<div class='contenedorsobre'>
+<div class='contenedorsobre cuadroInformativo'>
+  <!--
 <div class='contenedorPrincipal'>
   <div class='authImg'>
   
   <%= image_tag("usuario.png") %> 
   </div>
-<h2>Login usuario</h2>
+  -->
+<h2 class="text-center titulo">
+			<%= image_tag  "ayuda.png", :class => "usuario" %>
+			Login Usuario
+		</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -13,8 +18,8 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="form-actions text-center">
+    <%= f.button :submit, "Log in", :class => 'boton' %>
   </div>
 <% end %>
 
