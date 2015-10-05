@@ -1,17 +1,21 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
-
   # GET /services
   # GET /services.json
   def index
+      if current_driver
+    @Driver=Driver.find(params[:driver_id])
+    @services =  @Driver.services
+    else
     @Client=Client.find(params[:client_id])
     @services =  @Client.services
-    respond_to do |format|
-    format.html
-    format.csv { send_data @services.to_csv }
-  end
-  end
-
+   end
+   respond_to do |format|
+      format.html
+     format.csv { send_data @services.to_csv, :filename => 'Reporte.csv' }
+    end
+  
+end
   # GET /services/1
   # GET /services/1.json
   def show
@@ -89,7 +93,6 @@ class ServicesController < ApplicationController
     self.client.no_client
    end
    
- 
-   
 
-end
+ end
+

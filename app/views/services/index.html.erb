@@ -3,7 +3,7 @@
 <div class="page-header">
   <h1><%=t 'Reporte de Servicio' %></h1>
 </div>
-<table class="table table-striped">
+<table class="table">
   <thead>
     <tr>
 
@@ -14,8 +14,14 @@
       <th><%= model_class.human_attribute_name("Observacion") %></th>
       <th><%= model_class.human_attribute_name("Coductor") %></th>
       <th><%= model_class.human_attribute_name("Fecha") %></th>
+       <% if current_client%>
       <th><%= model_class.human_attribute_name("Evaluaciones") %></th>
       <th><%=t 'Evaluar' %></th>
+        <% elsif current_driver %>
+        <th></th>
+        <th></th>
+        <th><%= model_class.human_attribute_name("Cliente") %></th>
+        <% end %>
     </tr>
   </thead>
   <tbody>
@@ -29,19 +35,27 @@
         <td><%= link_to  service.driver.name_driver,driver_path(service.driver,@client) %></td>
         <td><%= service.created_at.to_date%></td>
         <td><%= service.valuation.description_valuation %></td>
+     
         <td>
+          <% if current_client%>
           <%= link_to t('.edit', :default => t("Evaluar Servicio")),
                       edit_client_service_path(@Client,service), :class => 'btn btn-default btn-xs' %>
-   
+       
         </td>
+          <% elsif current_driver %>
+        <th><%=service.client.no_client %></th>
+        <% end %>
       </tr>
-      <p>
-  Download:
-    <%= link_to "Descargar archivo",client_services_path(format: "csv") %> 
-  
-</p>
+     
     <% end %>
   </tbody>
+   <p>
+       <% if current_client%>
+    <%= link_to "Descargar Reporte",client_services_path(format: "csv") %> 
+    <% elsif current_driver %>
+    <%= link_to "Descargar Reporte",driver_services_path(format: "csv") %> 
+    <% end %>
+</p>
 </table>
 
 </div>
