@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Reporte de Taxis">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Ruta</Data></Cell>
+        <Cell><Data ss:Type="String">Origen</Data></Cell>
+        <Cell><Data ss:Type="String">Destino</Data></Cell>
+        <Cell><Data ss:Type="String">Precio</Data></Cell>
+      </Row>
+    <% @services.each do |service| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= service.route.description %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= service.route.origin %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= service.route.end %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= service.route.price %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
