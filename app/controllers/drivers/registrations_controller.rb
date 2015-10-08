@@ -7,7 +7,9 @@ def configure_permitted_parameters
    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name_driver, :address_driver,:telephone_driver, :email, :password, :remember_me,:picture) }
    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
 end 
- 
+  def sign_up(resource_name, resource)
+    true
+  end
   # GET /resource/sign_up
   # def new
   #   super

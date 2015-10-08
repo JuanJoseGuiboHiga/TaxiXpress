@@ -1,9 +1,9 @@
 <%= simple_form_for [@Client,@service], :html => { :class => 'form-horizontal' } do |f| %>
-   <%= f.association :route, label_method: :description%>
+   <%= f.association :route, label_method: :description , label:"Ruta"%>
      <%= link_to "Ver rutas disponibles", routes_path, :class => "btn btn-lg boton" %>
-   <%= f.association :payment_type, label_method: :description%>
+   <%= f.association :payment_type, label_method: :description, label:"Tipo de Pago"%>
 
-  <%= f.association :driver, label_method: :name_driver%>
+  <%= f.association :driver, label_method: :name_driver , label:"Taxista"%>
    <%= f.button :submit ,:class => 'btn-primary' %>
   <%= link_to t('.Cancel', :default => t("Retornar")),
                 paginaprincipal_usuario_index_path, :class => 'btn btn-default' %>

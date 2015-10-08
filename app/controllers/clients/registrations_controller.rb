@@ -8,6 +8,11 @@ def configure_permitted_parameters
    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
 end 
  
+   protected
+
+  def sign_up(resource_name, resource)
+    true
+  end
   # GET /resource/edit
   # def edit
   #   super
@@ -53,4 +58,7 @@ end
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  
+
+
 end
