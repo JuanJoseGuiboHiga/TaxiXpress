@@ -2,14 +2,43 @@
   <h2>Registro Usuario</h2>
 
 <%= simple_form_for @client, :html => { :class => 'form-horizontal' } do |f| %>
+<!--
   <%= f.error_notification %>
-
+  -->
   <div class="form-inputs">
-    <%= f.input :no_client, required: true, autofocus: true, label:"Nombre" %>
-     <%= f.input :telephone, required: true, autofocus: true , label:"Telefono"%>
-    <%= f.input :email, required: true, autofocus: true , label:"Email"%>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) , label:"Password" %>
-    <%= f.input :password_confirmation, required: true  , label:"Repita Password"%>
+    <table class="tablaFormulario tablaFormulario">
+      <tbody>
+        <tr>
+          <td>
+            <%= f.input :no_client, required: true, autofocus: true, label:"Nombre" %>
+          </td>
+          <td>
+            <%= f.input :telephone, required: true, autofocus: true , label:"Telefono"%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.input :email, required: true, autofocus: true , label:"Email"%>
+          </td>
+          <td>
+            
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) , label:"Password" %>
+          </td>
+          <td>
+            <%= f.input :password_confirmation, required: true  , label:"Repita Password"%>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+     
+    
+    
+    
   </div>
 
   <div class="form-actions">

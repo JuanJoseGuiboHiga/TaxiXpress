@@ -16,4 +16,12 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+//$(function(){ $(document).foundation(); });
+
+function activarMenuPorDefecto(){
+    if($("#menu li.active").length == 0){
+        $($("#menu li")[0]).addClass("active");
+    }
+}
+$(document).on("ready",activarMenuPorDefecto);
+//activarMenuPorDefecto();
