@@ -11,7 +11,8 @@ class Driver < ActiveRecord::Base
     styles: { medium: "300x300>",thumb: "100x100>"},
     default_url:"/images/:styles/missing.png"
     
-
+     validates :email,
+            uniqueness: { case_sensitive: false}
                     
      validates:picture, attachment_presence:true, presence:true
      validates_attachment :picture,
