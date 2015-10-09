@@ -5,6 +5,9 @@ class Service < ActiveRecord::Base
   belongs_to :driver
   belongs_to :valuation
    after_initialize :init
+   
+     validates :driver,
+            presence: true
    def init
      self.valuation||=build_valuation
    end
