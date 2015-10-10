@@ -16,9 +16,9 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              routes_path, :class => 'btn btn-default'  %>
+              routes_path, :class => 'btn btn-primary'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_route_path(@route), :class => 'btn btn-default' %>
+              edit_route_path(@route), :class => 'btn btn-success' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               route_path(@route),
               :method => 'delete',

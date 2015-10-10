@@ -28,7 +28,7 @@
         <% if current_administrator%>
            <td>
           <%= link_to t('.edit', :default => t("Editar")),
-                      edit_route_path(route), :class => 'btn btn-default btn-xs' %>
+                      edit_route_path(route), :class => 'btn btn-success btn-xs' %>
           <%= link_to t('.destroy', :default => t("Eliminar")),
                       route_path(route),
                       :method => :delete,

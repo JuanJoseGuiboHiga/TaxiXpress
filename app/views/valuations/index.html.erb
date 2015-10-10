@@ -20,7 +20,7 @@
         <td><%=l valuation.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_valuation_path(valuation), :class => 'btn btn-default btn-xs' %>
+                      edit_valuation_path(valuation), :class => 'btn btn-success btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       valuation_path(valuation),
                       :method => :delete,

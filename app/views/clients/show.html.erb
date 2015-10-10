@@ -29,9 +29,9 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              clients_path, :class => 'btn btn-default'  %>
+              clients_path, :class => 'btn btn-primary'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_client_path(@client), :class => 'btn btn-default' %>
+              edit_client_path(@client), :class => 'btn btn-success' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               client_path(@client),
               :method => 'delete',
