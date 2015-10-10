@@ -1,5 +1,5 @@
 
-<div class="cuadroInformativo">
+<div class="">
   <%= simple_form_for @route, :html => { :class => 'form-horizontal' } do |f| %>
     <%= f.input :description ,label:"Descripción" %>
     <%= error_span(@route[:description]) %>
@@ -11,6 +11,6 @@
     <%= error_span(@route[:price]) %>
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  pagina_principal_administrador_index_path, :class => 'btn btn-default' %>
+                  pagina_principal_administrador_index_path, :class => 'btn btn-danger' %>
   <% end %>
 </div>
