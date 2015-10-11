@@ -53,10 +53,16 @@
    <p>
        <% if current_client%>
     <%= link_to "Descargar Reporte",client_services_path(format: "csv") %> 
+    
     <% elsif current_driver %>
     <%= link_to "Descargar Reporte",driver_services_path(format: "csv") %> 
+    
     <% end %>
+    
 </p>
+
+  
+
 </table>
 
 </div>

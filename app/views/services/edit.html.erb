@@ -1,3 +1,4 @@
+<div class="cuadroInformativo">
 <%- model_class = Service -%>
 <div class="page-header">
   <h1><%=t 'Evaluar Servicio'%></h1>
@@ -9,5 +10,5 @@
   <%= f.association :valuation, label_method: :description_valuation %>
     <%= f.button :submit, :class => 'btn-primary' %>
 <% end %>
-
+</div>
 
