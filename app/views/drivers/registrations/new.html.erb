@@ -40,21 +40,18 @@
            <td>
             <%= f.input :placa_driver , label:"Placa"%>
           </td>
+           <td>
+            <%= f.input :picture, as: :file , label:"Foto" %>
+          </td>
         </tr>
           <tr>
           <td>
-            <%= f.input :picture, as: :file , label:"Foto" %>
-          </td>
-          <td>
-            <%= f.button :submit, "Registrar Taxista", :class=>"boton" %>
-           
+            <%= f.button :submit, "Registrar Taxista", :class=>"btn btn-primary" %>
+             <a type="button" class="btn btn-warning" href="/pagina_principal_administrador/index">Atras</a>
           </td>
         </tr>
       </tbody>
     </table>
-    <!--
-
-    -->
   </div>
 <!--
   <div class="form-actions">
