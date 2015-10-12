@@ -9,8 +9,8 @@
     <%= error_span(@route[:end]) %>
     <%= f.input :price, label:"Precio" %>
     <%= error_span(@route[:price]) %>
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    <%= f.button :submit,"Registrar Ruta", :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("Atras")),
                   pagina_principal_administrador_index_path, :class => 'btn btn-danger' %>
   <% end %>
 </div>
