@@ -3,8 +3,8 @@
   <%= f.input :description, label:"Descripción"%>
   <%= error_span(@payment_type[:description]) %>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+  <%= f.button :submit,"Registrar Tipo de Pago", :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("Atras")),
                 pagina_principal_administrador_index_path, :class => 'btn btn-danger' %>
 <% end %>
 </div>
