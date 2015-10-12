@@ -12,14 +12,13 @@
       <th><%= model_class.human_attribute_name("Destino") %></th>
       <th><%= model_class.human_attribute_name("Precio") %></th>
       <th><%= model_class.human_attribute_name("Observacion") %></th>
-     
       <th><%= model_class.human_attribute_name("Fecha") %></th>
-       <% if current_client%>
       <th><%= model_class.human_attribute_name("Evaluaciones") %></th>
+       <% if current_client%>
+  
        <th><%= model_class.human_attribute_name("Coductor") %></th>
       <th><%=t 'Evaluar' %></th>
         <% elsif current_driver %>
-        <th></th>
         <th><%= model_class.human_attribute_name("Cliente") %></th>
         <% end %>
     </tr>
@@ -66,6 +65,10 @@
 
 </table>
 <p>
+   <% if current_client%>
   <a type="button" class="btn btn-warning" href="/paginaprincipal_usuario/index">Atras</a>
+   <% elsif current_driver %>
+    <a type="button" class="btn btn-warning" href="/pagina_principal_taxista/index">Atras</a>
+   <% end %>
 </p>
 </div>
